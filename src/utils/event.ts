@@ -8,6 +8,11 @@ export function emitCustomEvent<T>(type: string, detail?: T) {
   window.dispatchEvent(customEvent);
 }
 
+/**
+ * Add a listener to an event and returns a callback to remove it.
+ * @param params Same from [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#parameters)
+ * @return a function that removes the event listener
+ */
 export function listenEvent<K extends keyof WindowEventMap>(
   ...params: Parameters<typeof window.addEventListener<K>>
 ): () => void;
@@ -17,6 +22,10 @@ export function listenEvent(...params: Parameters<typeof window.addEventListener
   return () => removeListener(...params);
 }
 
+/**
+ * Removes an event listener.
+ * @param params Same from [removeEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener#parameters)
+ */
 export function removeListener<K extends keyof WindowEventMap>(
   ...params: Parameters<typeof window.removeEventListener<K>>
 ): void;
