@@ -1,8 +1,8 @@
-# @nexdom/pkg-template
+# @nexdom/shared
 
-[![CI](https://github.com/nexdom-healthtech/pkg-template/actions/workflows/ci.yml/badge.svg)](https://github.com/nexdom-healthtech/pkg-template/actions/workflows/ci.yml)
-[![CD](https://github.com/nexdom-healthtech/pkg-template/actions/workflows/cd.yml/badge.svg)](https://github.com/nexdom-healthtech/pkg-template/actions/workflows/cd.yml)
-[![Dependabot](https://github.com/nexdom-healthtech/pkg-template/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/nexdom-healthtech/pkg-template/actions/workflows/dependabot/dependabot-updates)
+[![CI](https://github.com/nexdom-healthtech/shared/actions/workflows/ci.yml/badge.svg)](https://github.com/nexdom-healthtech/shared/actions/workflows/ci.yml)
+[![CD](https://github.com/nexdom-healthtech/shared/actions/workflows/cd.yml/badge.svg)](https://github.com/nexdom-healthtech/shared/actions/workflows/cd.yml)
+[![Dependabot](https://github.com/nexdom-healthtech/shared/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/nexdom-healthtech/shared/actions/workflows/dependabot/dependabot-updates)
 
 > [!Warning]
 > This projects is a template designed for GitHub projects. It is ready to be published on GitHub Pages and NPM.
@@ -20,26 +20,26 @@
 
 A template for creating NEXDOM flavor libraries **using Vite+ and TypeScript**.
 
-For more examples and information, check the [docs page](https://nexdom-healthtech.github.io/pkg-template/).
+For more examples and information, check the [docs page](https://nexdom-healthtech.github.io/shared/).
 
 ## 💻 Get started
 
 ### Install
 
 ```bash
-vp add @nexdom/pkg-template
+vp add @nexdom/shared
 # But, if you're not using Vite+ yet...
-npm i @nexdom/pkg-template
+npm i @nexdom/shared
 # Or
-pnpm add @nexdom/pkg-template
+pnpm add @nexdom/shared
 # Or
-yarn add @nexdom/pkg-template
+yarn add @nexdom/shared
 ```
 
 ### Usage
 
 ```ts
-import { sayHello } from "@nexdom/pkg-template";
+import { sayHello } from "@nexdom/shared";
 
 const helloMessage = sayHello();
 
@@ -51,7 +51,7 @@ console.log(helloMessage);
 
 Help us improve our community.
 
-Report an [issue](https://github.com/nexdom-healthtech/pkg-template/issues) you've found or check our [Contribution Guide](./CONTRIBUTING.md) to learn how to code in our project and open your own PRs to us.
+Report an [issue](https://github.com/nexdom-healthtech/shared/issues) you've found or check our [Contribution Guide](./CONTRIBUTING.md) to learn how to code in our project and open your own PRs to us.
 
 ## 📄 License
 
