@@ -1,4 +1,4 @@
-import { utils } from "@/index.ts";
+import utils from "@/utils/index.ts";
 
 describe("utils", () => {
   it("should be defined", () => {
