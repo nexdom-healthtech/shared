@@ -96,6 +96,15 @@ module.exports = {
       },
       to: {},
     },
+    {
+      name: "models-services-and-utils-only",
+      comment: `The root folders from this project must be models, services or utils only.`,
+      severity: "error",
+      from: {
+        pathNot: ["src/(__tests__|index|models|services|utils)"],
+      },
+      to: {},
+    },
   ],
   options: {
     // Which modules not to follow further when encountered
