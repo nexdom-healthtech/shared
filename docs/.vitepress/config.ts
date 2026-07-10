@@ -11,7 +11,7 @@ export default defineConfig({
   title: "shared | NEXDOM",
   base: "/shared/",
   head: [["link", { rel: "icon", href: "/shared/favicon.svg" }]],
-  description: "Um template para a criação validando de libs NEXDOM.",
+  description: "Alguns models, services e utils para compartilharmos.",
   lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -76,13 +76,13 @@ export default defineConfig({
       ],
       "/api/": [
         {
-          text: "Utils",
+          text: "Utilitários",
           collapsed: false,
           items: [
-            {
-              text: "sayHello",
-              link: "/api/say-hello",
-            },
+            { text: "Data e hora", link: "/api/date-time" },
+            { text: "Eventos", link: "/api/events" },
+            { text: "Números", link: "/api/numbers" },
+            { text: "Texto", link: "/api/text" },
           ],
         },
       ],
