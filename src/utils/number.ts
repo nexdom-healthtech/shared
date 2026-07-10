@@ -16,6 +16,6 @@ export function toNumber(text?: string | null, defaultValue = 0) {
  * @param maxLength length o the resulting string
  * @param fillString the string to pad the current string with
  */
-export function padStart(value: number, maxLength = 2, fillString = "0") {
+export function padStart(value: number | string, maxLength = 2, fillString = "0") {
   return value.toString().padStart(maxLength, fillString);
 }
