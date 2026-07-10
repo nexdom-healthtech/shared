@@ -2,9 +2,10 @@ import {
   currentDateTime,
   formatDateTime,
   formatPeriodInterval,
+  navigatePeriod,
   toDate,
   toPeriodInterval,
-} from "@/utils/date-time/index.ts";
+} from "@/utils/date-time/date-time.ts";
 
 describe("dateTime", () => {
   describe("currentDateTime", () => {
@@ -115,6 +116,38 @@ describe("dateTime", () => {
 
       const format6 = "sssec";
       expect(formatPeriodInterval(interval, format6)).toBe(`${(62898305).toLocaleString()}sec`);
+    });
+  });
+
+  describe("navigatePeriod", () => {
+    it("should be able to advance time", () => {
+      const originalDate = new Date("1993-08-30 10:15:20");
+      const date1 = new Date(originalDate);
+
+      const date2 = navigatePeriod(date1, { seconds: 5 });
+      expect(date1).toEqual(originalDate);
+      expect(date2).toEqual(new Date("1993-08-30 10:15:25"));
+
+      const date3 = navigatePeriod(date2, { hours: 1, minutes: 15 });
+      expect(date3).toEqual(new Date("1993-08-30 11:30:25"));
+
+      const date4 = navigatePeriod(date3, { years: 2, months: 1, days: 2 });
+      expect(date4).toEqual(new Date("1995-10-02 11:30:25"));
+    });
+
+    it("should be able to go back in time", () => {
+      const originalDate = new Date("1993-08-30 10:15:20");
+      const date1 = new Date(originalDate);
+
+      const date2 = navigatePeriod(date1, { seconds: -5 });
+      expect(date1).toEqual(originalDate);
+      expect(date2).toEqual(new Date("1993-08-30 10:15:15"));
+
+      const date3 = navigatePeriod(date2, { hours: -1, minutes: -15 });
+      expect(date3).toEqual(new Date("1993-08-30 09:00:15"));
+
+      const date4 = navigatePeriod(date3, { years: -2, months: -1, days: -2 });
+      expect(date4).toEqual(new Date("1991-07-28 09:00:15"));
     });
   });
 });
