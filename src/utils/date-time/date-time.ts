@@ -55,6 +55,20 @@ export function toDate(text: string, format: string): Date {
 }
 
 /**
+ * Confirms the possibility to parse a text into a Date instance.
+ * @param text any string you need
+ * @param format token format (e.g. "YYYY-MM-DD" => "2026-08-07")
+ */
+export function isValidDateTime(text: string, format: string): boolean {
+  try {
+    toDate(text, format);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Returns a new Date instance after navigate time period.
  * @param navigatedDate native Date instance
  * @param period [TimePeriod] partial TimePeriod to navigate (e.g. { years: 2, months: -1 })
