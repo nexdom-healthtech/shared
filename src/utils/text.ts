@@ -33,7 +33,7 @@ export function toTitle(text: string) {
  * @returns the original text on sentence case (e.g. "hello-world" => "Hello world")
  */
 export function toSentence(text: string) {
-  const sentenceText = toKebab(text).replace(/-/g, " ");
+  const sentenceText = toKebab(text).replaceAll("-", " ");
   return sentenceText.replace(/^(.)/, (_, letter) => letter.toUpperCase());
 }
 
