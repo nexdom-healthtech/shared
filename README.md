@@ -25,7 +25,7 @@ yarn add @nexdom/shared
 ### Usage
 
 ```ts
-import { toKebab } from "@nexdom/shared";
+import { toKebab } from "@nexdom/shared/utils";
 
 const kebabMessage = toKebab("Hello world");
 
