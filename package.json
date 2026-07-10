@@ -1,7 +1,7 @@
 {
   "name": "@nexdom/shared",
   "version": "0.0.0",
-  "description": "A template for creating NEXDOM flavor libraries.",
+  "description": "Some models, services and utils we need on daily bases.",
   "keywords": [
     "lib",
     "nexdom",
@@ -13,7 +13,7 @@
     "url": "https://github.com/nexdom-healthtech/shared/issues"
   },
   "license": "MIT",
-  "author": "Author Name <author.name@nexdom.tec.br>",
+  "author": "Rafael Perini <rafael.perini@nexdom.tec.br>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nexdom-healthtech/shared.git",
