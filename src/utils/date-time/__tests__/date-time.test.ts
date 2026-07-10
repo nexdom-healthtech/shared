@@ -2,6 +2,7 @@ import {
   currentDateTime,
   formatDateTime,
   formatPeriodInterval,
+  isValidDateTime,
   navigatePeriod,
   toDate,
   toPeriodInterval,
@@ -148,6 +149,34 @@ describe("dateTime", () => {
 
       const date4 = navigatePeriod(date3, { years: -2, months: -1, days: -2 });
       expect(date4).toEqual(new Date("1991-07-28 09:00:15"));
+    });
+  });
+
+  describe("isValidDateTime", () => {
+    it("should validate dates", () => {
+      expect(isValidDateTime("2002-12-18", "YYYY-MM-DD")).toBeTruthy();
+      expect(isValidDateTime("18/12/2002", "DD/MM/YYYY")).toBeTruthy();
+      expect(isValidDateTime("2002-12-a", "YYYY-MM-DD")).toBeFalsy();
+      expect(isValidDateTime("2002-b-18", "YYYY-MM-DD")).toBeFalsy();
+      expect(isValidDateTime("c-12-18", "YYYY-MM-DD")).toBeFalsy();
+    });
+
+    it("should validate times", () => {
+      expect(isValidDateTime("18:45:11", "HH:mm:ss")).toBeTruthy();
+      expect(isValidDateTime("23:30", "HH:mm")).toBeTruthy();
+      expect(isValidDateTime("a:45:11", "HH:mm:ss")).toBeFalsy();
+      expect(isValidDateTime("18:b:11", "HH:mm:ss")).toBeFalsy();
+      expect(isValidDateTime("18:45:c", "HH:mm:ss")).toBeFalsy();
+    });
+
+    it("should validate date times", () => {
+      expect(isValidDateTime("2002-11-01 02:45:11", "YYYY-MM-DD HH:mm:ss")).toBeTruthy();
+      expect(isValidDateTime("2002-12-18, 18:45:11", "YYYY-MM-DD, HH:mm:ss")).toBeTruthy();
+      expect(isValidDateTime("18/12/2002 - 18:45:11", "DD/MM/YYYY - HH:mm")).toBeTruthy();
+      expect(isValidDateTime("18/12/2002 23:30", "DD/MM/YYYY HH:mm")).toBeTruthy();
+      expect(isValidDateTime("2002-12-18 a:45:11", "DD/MM/YYYY HH:mm:ss")).toBeFalsy();
+      expect(isValidDateTime("2002-12-b 18:45:11", "DD/MM/YYYY HH:mm:ss")).toBeFalsy();
+      expect(isValidDateTime("2002-1218 18:45:11", "DD/MM/YYYY HH:mm:ss")).toBeFalsy();
     });
   });
 });
