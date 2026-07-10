@@ -4,11 +4,11 @@ layout: home
 
 hero:
   name: "shared"
-  text: "Um template para criar libs"
+  text: "Soluções em TS para compartilharmos"
   tagline: Sinergia em forma de código
   actions:
     - theme: brand
-      text: O que é shared?
+      text: O que é o shared?
       link: /guide
     - theme: alt
       text: Iniciando
@@ -27,10 +27,7 @@ features:
   - title: Mais Tecnologia
     icon: 🤖
     details: Sinergia na troca de conhecimento e soluções.
-  - title: Sem Retrabalhos
-    icon: 💡
-    details: Menos foco nos problemas genéricos, mais foco no nosso negócio.
   - title: Mais Agilidade
     icon: 🚀
-    details: Tudo pronto pra você começar a usar com qualidade.
+    details: Sem reinventar a roda. Vamos resolver os problemas em um lugar só.
 ---

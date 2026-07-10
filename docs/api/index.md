@@ -25,7 +25,19 @@ next: false
 
 <script lang="ts" setup>
     const apis = [{
-        group: "Utils",
-        methods: [{ text: "sayHello", link: './say-hello' }]
+        group: "Utilitários",
+        methods: [{
+            text: "Data e hora",
+            link: './date-time'
+        },{
+            text: "Eventos",
+            link: './events'
+        },{
+            text: "Números",
+            link: './numbers'
+        },{
+            text: "Texto",
+            link: './text'
+        }]
     }];
 </script>
