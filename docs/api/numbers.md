@@ -1,5 +1,7 @@
 # Números
 
+Recursos diversos para trabalhar com `number`s.
+
 ## toNumber
 
 Converte valor para numérico.
