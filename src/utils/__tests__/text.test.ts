@@ -7,6 +7,12 @@ describe("text", () => {
       const result = toKebab(text);
       expect(result).toBe("hello-world");
     });
+
+    it("should trim received text", () => {
+      const text = " Hello World ";
+      const result = toKebab(text);
+      expect(result).toBe("hello-world");
+    });
   });
 
   describe("toCamel", () => {
