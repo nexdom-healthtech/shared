@@ -12,17 +12,18 @@ outline: deep
 
 Temos recursos para lidar com:
 
-- [Texto](../api/text.md):
+- [Texto](../api/text):
   - formatação (exemplo: kebab, camel, title e sentence case)
   - reduzir
-- [Números](../api/numbers.md):
+- [Números](../api/numbers):
   - converter para numérico
   - formatar números
-- [Data e hora](../api/data-time.md):
+- [Data e hora](../api/date-time):
   - formatar data e hora atual
   - formatar data e hora
   - parser de data e hora
   - validar data e hora dentro atende formato especificado
   - avançar ou retroceder entre datas e horas
   - obter e formatar períodos de intervalo de tempo
-- [Tratativas para eventos](../api/events.md)
+- [Tratativas para eventos](../api/events)
+  - ouvir e emitir eventos customizados
