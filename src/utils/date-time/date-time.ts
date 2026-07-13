@@ -74,7 +74,7 @@ export function isValidDateTime(text: string, format: string): boolean {
  * @param period [TimePeriod] partial TimePeriod to navigate (e.g. { years: 2, months: -1 })
  * @returns an updated Date instance
  */
-export function navigatePeriod(date: Date, period: Partial<TimePeriod>) {
+export function navigatePeriod(date: Date, period: Partial<TimePeriod>): Date {
   const navigatedDate = new Date(date);
   if (period.years) navigatedDate.setFullYear(navigatedDate.getFullYear() + period.years);
   if (period.months) navigatedDate.setMonth(navigatedDate.getMonth() + period.months);
@@ -83,30 +83,6 @@ export function navigatePeriod(date: Date, period: Partial<TimePeriod>) {
   if (period.minutes) navigatedDate.setMinutes(navigatedDate.getMinutes() + period.minutes);
   if (period.seconds) navigatedDate.setSeconds(navigatedDate.getSeconds() + period.seconds);
   return navigatedDate;
-}
-
-/**
- * Format period interval according to specification.
- * @param period object returned from `toPeriodInterval`
- * @param format token format (e.g. "YYYYy, MMm, DDd" => "2y, 8m, 10d")
- * @returns a string according to the provided format
- */
-export function formatPeriodInterval(period: TimePeriod, format: string) {
-  const interval = Object.assign({}, period);
-
-  const hasYears = format.includes(FORMAT.YEAR);
-  const hasMonths = format.includes(FORMAT.MONTH);
-  const hasDays = format.includes(FORMAT.DAY);
-  const hasHours = format.includes(FORMAT.HOURS);
-  const hasMinutes = format.includes(FORMAT.MINUTES);
-
-  if (!hasYears) interval.months += Math.round(interval.years * 12);
-  if (!hasMonths) interval.days += Math.round(interval.months * (365 / 12));
-  if (!hasDays) interval.hours += Math.round(interval.days * 24);
-  if (!hasHours) interval.minutes += Math.round(interval.hours * 60);
-  if (!hasMinutes) interval.seconds += Math.round(interval.minutes * 60);
-
-  return toFormat(interval, format, false);
 }
 
 /**
@@ -142,6 +118,30 @@ export function toPeriodInterval(fromDate: Date, untilDate = new Date()): TimePe
   if (seconds > 0) date.setSeconds(date.getSeconds() + seconds);
 
   return { years, months, days, hours, minutes, seconds };
+}
+
+/**
+ * Format period interval according to specification.
+ * @param period object returned from `toPeriodInterval`
+ * @param format token format (e.g. "YYYYy, MMm, DDd" => "2y, 8m, 10d")
+ * @returns a string according to the provided format
+ */
+export function formatPeriodInterval(period: TimePeriod, format: string) {
+  const interval = Object.assign({}, period);
+
+  const hasYears = format.includes(FORMAT.YEAR);
+  const hasMonths = format.includes(FORMAT.MONTH);
+  const hasDays = format.includes(FORMAT.DAY);
+  const hasHours = format.includes(FORMAT.HOURS);
+  const hasMinutes = format.includes(FORMAT.MINUTES);
+
+  if (!hasYears) interval.months += Math.round(interval.years * 12);
+  if (!hasMonths) interval.days += Math.round(interval.months * (365 / 12));
+  if (!hasDays) interval.hours += Math.round(interval.days * 24);
+  if (!hasHours) interval.minutes += Math.round(interval.hours * 60);
+  if (!hasMinutes) interval.seconds += Math.round(interval.minutes * 60);
+
+  return toFormat(interval, format, false);
 }
 
 function diff(from: Date, until: Date) {
