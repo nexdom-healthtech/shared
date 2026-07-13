@@ -4,7 +4,10 @@
  * @returns the original string on kebab case (e.g. "Hello World" => "hello-world")
  */
 export function toKebab(text: string) {
-  return text.replace(/[_\s]+/g, "-").toLowerCase();
+  return text
+    .trim()
+    .replace(/[_\s]+/g, "-")
+    .toLowerCase();
 }
 
 /**
