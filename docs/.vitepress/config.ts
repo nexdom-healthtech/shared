@@ -13,6 +13,22 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/shared/favicon.svg" }]],
   description: "Alguns models, services e utils para compartilharmos.",
   lastUpdated: true,
+  cleanUrls: true,
+  sitemap: {
+    hostname: "https://nexdom-healthtech.github.io/pkg-template/",
+  },
+  markdown: {
+    container: {
+      infoLabel: "INFORMAÇÃO",
+      noteLabel: "INFORMAÇÃO",
+      tipLabel: "DICA",
+      warningLabel: "AVISO",
+      dangerLabel: "ATENÇÃO",
+      detailsLabel: "DETALHES",
+      importantLabel: "IMPORTANTE",
+      cautionLabel: "ATENÇÃO",
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/favicon.svg",
