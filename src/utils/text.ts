@@ -46,5 +46,5 @@ export function toSentence(text: string) {
  * @returns the original text with only the first and last words (e.g. "hello world, this is a test" => "hello test")
  */
 export function shrinkText(text: string) {
-  return text.replace(/^(\w+)\s.*\s(.+)/, "$1 $2");
+  return text.trim().replace(/^(\w+)\s.*\s(.+)/, "$1 $2");
 }
