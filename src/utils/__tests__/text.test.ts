@@ -49,5 +49,11 @@ describe("text", () => {
       const result2 = shrinkText(text2);
       expect(result2).toBe("hello");
     });
+
+    it("should trim received text", () => {
+      const text = " hello world, this is a test";
+      const result = shrinkText(text);
+      expect(result).toBe("hello test");
+    });
   });
 });
