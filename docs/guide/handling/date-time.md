@@ -2,18 +2,19 @@
 
 ## Data e hora
 
-- <label :for="dateTimeId">Data/hora: </label>
-  <input :id="dateTimeId" v-model="dateTimeText" :placeholder="originFormat" />
-  - [isValidDateTime](../../api/date-time#formatdatetime): {{ validDateTime }}
-  - [toDate](../../api/date-time#todate): {{ dateTime ?? "" }}
-  - [toPeriodInterval](../../api/date-time#toperiodinterval) (até data e hora atual): {{ interval }}
-  - [navigatePeriod](../../api/date-time#navigateperiod):
-    - <button :disabled="!validDateTime" @click="navigate({years: -1})">-1 ano</button> <button :disabled="!validDateTime" @click="navigate({years: 1})">+1 ano</button>
-    - <button :disabled="!validDateTime" @click="navigate({months: -1})">-1 mês</button> <button :disabled="!validDateTime" @click="navigate({months: 1})">+1 mês</button>
-    - <button :disabled="!validDateTime" @click="navigate({days: -1})">-1 dias</button> <button :disabled="!validDateTime" @click="navigate({days: 1})">+1 dias</button>
-    - <button :disabled="!validDateTime" @click="navigate({hours: -1})">-1 hora</button> <button :disabled="!validDateTime" @click="navigate({hours: 1})">+1 hora</button>
-    - <button :disabled="!validDateTime" @click="navigate({minutes: -1})">-1 minutos</button> <button :disabled="!validDateTime" @click="navigate({minutes: 1})">+1 minutos</button>
-    - <button :disabled="!validDateTime" @click="navigate({seconds: -1})">-1 segundos</button> <button :disabled="!validDateTime" @click="navigate({seconds: 1})">+1 segundos</button>
+<label :for="dateTimeId">Data/hora: </label>
+<input :id="dateTimeId" v-model="dateTimeText" :placeholder="originFormat" />
+
+- [isValidDateTime](../../api/date-time#formatdatetime): {{ validDateTime }}
+- [toDate](../../api/date-time#todate): {{ dateTime ?? "" }}
+- [toPeriodInterval](../../api/date-time#toperiodinterval) (até data e hora atual): {{ interval }}
+- [navigatePeriod](../../api/date-time#navigateperiod):
+  - <button :disabled="!validDateTime" @click="navigate({years: -1})">[-1 ANO]</button> <button :disabled="!validDateTime" @click="navigate({years: 1})">[+1 ANO]</button>
+  - <button :disabled="!validDateTime" @click="navigate({months: -1})">[-1 MÊS]</button> <button :disabled="!validDateTime" @click="navigate({months: 1})">[+1 MÊS]</button>
+  - <button :disabled="!validDateTime" @click="navigate({days: -1})">[-1 DIAS]</button> <button :disabled="!validDateTime" @click="navigate({days: 1})">[+1 DIAS]</button>
+  - <button :disabled="!validDateTime" @click="navigate({hours: -1})">[-1 HORA]</button> <button :disabled="!validDateTime" @click="navigate({hours: 1})">[+1 HORA]</button>
+  - <button :disabled="!validDateTime" @click="navigate({minutes: -1})">[-1 MINUTOS]</button> <button :disabled="!validDateTime" @click="navigate({minutes: 1})">[+1 MINUTOS]</button>
+  - <button :disabled="!validDateTime" @click="navigate({seconds: -1})">[-1 SEGUNDOS]</button> <button :disabled="!validDateTime" @click="navigate({seconds: 1})">[+1 SEGUNDOS]</button>
 
 <script lang="ts" setup>
   import { useId, ref, computed } from "vue"
