@@ -34,6 +34,9 @@ Retorna a data e hora formata. Caso um formato (`format`) não seja especificado
 ```ts
 import { currentDateTime } from "@nexdom/shared/utils";
 
+// resultado: "10/07/2026"
+currentDateTime();
+
 // resultado: "2026-07-10"
 currentDateTime("YYYY-MM-DD");
 
