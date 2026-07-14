@@ -1,4 +1,4 @@
-import { shrinkText, toCamel, toKebab, toSentence, toTitle } from "@/utils/text.ts";
+import { shrinkText, toCamel, toInitials, toKebab, toSentence, toTitle } from "@/utils/text.ts";
 
 describe("text", () => {
   describe("toKebab", () => {
@@ -54,6 +54,18 @@ describe("text", () => {
       const text = " hello world, this is a test";
       const result = shrinkText(text);
       expect(result).toBe("hello test");
+    });
+  });
+
+  describe("toInitials", () => {
+    it("should return the first letter of the first and last words in upper cased", () => {
+      expect(toInitials("hello world")).toBe("HW");
+      expect(toInitials("hello world, test")).toBe("HT");
+    });
+
+    it("should trim received text", () => {
+      const text = " hello world, this is a test ";
+      expect(toInitials(text)).toBe("HT");
     });
   });
 });
