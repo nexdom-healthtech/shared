@@ -59,4 +59,7 @@ padStart(1);
 
 // resultado: "002"
 padStart("2", 3);
+
+// resultado: "xxx3"
+padStart("3", 4, "x");
 ```
