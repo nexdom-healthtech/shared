@@ -94,6 +94,32 @@ import { toSentence } from "@nexdom/shared/utils";
 toSentence("Seu texto aqui");
 ```
 
+## toInitials
+
+Reduz o texto informado para as iniciais.
+
+- Tipo
+
+```ts
+function toInitials(text: string): string;
+```
+
+- Detalhes
+
+Reduz o texto informado para as iniciais maiúsculas da primeira e última palavra.
+
+- Exemplo
+
+```ts
+import { toInitials } from "@nexdom/shared/utils";
+
+// resultado: SA
+toInitials("Seu texto aqui");
+
+// resultado: HW
+toInitials("Hello world");
+```
+
 ## shrinkText
 
 Reduz o texto informado.
