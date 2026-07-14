@@ -89,6 +89,19 @@ export default defineConfig({
             { text: "Iniciando", link: "/guide/getting-started" },
           ],
         },
+        {
+          text: "Utilitários",
+          items: [
+            { text: "Formatação", link: "/guide/formatting" },
+            {
+              text: "Manipulação",
+              items: [
+                { text: "Data e Hora", link: "/guide/handling/date-time" },
+                { text: "Eventos", link: "/guide/handling/events" },
+              ],
+            },
+          ],
+        },
       ],
       "/api/": [
         {
