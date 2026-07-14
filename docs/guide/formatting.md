@@ -11,6 +11,7 @@ Abaixo temos exemplos interativos com nossos métodos para formatações.
 - [camelCase](../api/text#tocamel): {{ toCamel(text) }}
 - [Title Case](../api/text#totitle): {{ toTitle(text) }}
 - [Sentence Case](../api/text#tosentence): {{ toSentence(text) }}
+- [Initials](../api/text#toinitials): {{ toInitials(text) }}
 - [Shrink Case](../api/text#shrinktext): {{ shrinkText(text) }}
 
 ## Números
@@ -74,6 +75,7 @@ As formatações de data e hora levam em consideração os seguintes tokens:
     isValidDateTime,
     toPeriodInterval,
     formatPeriodInterval,
+    toInitials,
   } from "../../dist/utils.mjs"
 
   // Text
