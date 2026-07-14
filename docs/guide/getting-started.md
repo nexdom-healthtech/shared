@@ -41,4 +41,4 @@ const kebabMessage = toKebab("Hello world");
 console.log(kebabMessage);
 ```
 
-Acesse as [APIs](../api/) e saiba mais dos recursos que essa lib dispõe.
+Acesse as [APIs](../api/) para saber detalhadamente do que essa lib dispõe.
