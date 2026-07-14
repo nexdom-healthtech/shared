@@ -48,3 +48,16 @@ export function toSentence(text: string) {
 export function shrinkText(text: string) {
   return text.trim().replace(/^(\w+)\s.*\s(.+)/, "$1 $2");
 }
+
+/**
+ * Shrinks a string to its initials.
+ * @param text any string you want
+ * @returns the original text initials, considering the first and last words upper cased (e.g. "hello world, this is a test" => "HT")
+ */
+export function toInitials(text: string) {
+  const words = text.trim().toUpperCase().split(" ");
+  const firstWord = words.shift() ?? "";
+  const lastWord = words.pop() ?? "";
+
+  return `${firstWord[0]}${lastWord[0]}`;
+}
