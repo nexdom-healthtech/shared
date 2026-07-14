@@ -50,52 +50,52 @@ As formatações de data e hora levam em consideração os seguintes tokens:
   - [formatPeriodInterval](../api/date-time#formatperiodinterval): {{ formattedPeriodInterval }}
 
 <script lang="ts" setup>
-    import { useId, ref, computed } from "vue"
-    import {
-      toKebab,
-      toCamel,
-      toTitle,
-      toSentence,
-      shrinkText,
-      toNumber,
-      padStart,
-      currentDateTime,
-      formatDateTime,
-      toDate,
-      isValidDateTime,
-      toPeriodInterval,
-      formatPeriodInterval,
-    } from "../../dist/utils.mjs"
+  import { useId, ref, computed } from "vue"
+  import {
+    toKebab,
+    toCamel,
+    toTitle,
+    toSentence,
+    shrinkText,
+    toNumber,
+    padStart,
+    currentDateTime,
+    formatDateTime,
+    toDate,
+    isValidDateTime,
+    toPeriodInterval,
+    formatPeriodInterval,
+  } from "../../dist/utils.mjs"
 
-// Text
-    const textId = useId();
-    const text = ref("Seu texto aqui");
+  // Text
+  const textId = useId();
+  const text = ref("Seu texto aqui");
 
-// Number
-    const numberTextId = useId();
-    const paddingId = useId();
-    const fillStringId = useId();
-    const numberText = ref("1");
-    const padding = ref<number>();
-    const fillWith = ref<string>();
+  // Number
+  const numberTextId = useId();
+  const paddingId = useId();
+  const fillStringId = useId();
+  const numberText = ref("1");
+  const padding = ref<number>();
+  const fillWith = ref<string>();
 
-    // Date / time
-    const formatId = useId();
-    const dateTimeId = useId();
-    const originFormatId = useId();
-    const intervalFormatId = useId();
-    const format = ref<string>('DD/MM/YYYY');
-    const originFormat = ref<string>('YYYY-MM-DD');
-    const intervalFormat = ref<string>("YYYYa, MMm, DDd");
-    const dateTimeText = ref<string>("");
+  // Date / time
+  const formatId = useId();
+  const dateTimeId = useId();
+  const originFormatId = useId();
+  const intervalFormatId = useId();
+  const format = ref<string>('DD/MM/YYYY');
+  const originFormat = ref<string>('YYYY-MM-DD');
+  const intervalFormat = ref<string>("YYYYa, MMm, DDd");
+  const dateTimeText = ref<string>("");
 
-    const validDateTime = computed(() => isValidDateTime(dateTimeText.value, originFormat.value))
-    const dateTime = computed(() => validDateTime.value ? toDate(dateTimeText.value, originFormat.value) : undefined)
-    const formattedDateTime = computed(() => dateTime.value ? formatDateTime(dateTime.value, orUndefined(format.value)) : "")
-    const periodInterval = computed(() => dateTime.value ? toPeriodInterval(dateTime.value) : "")
-    const formattedPeriodInterval = computed(() => periodInterval.value ? formatPeriodInterval(periodInterval.value, intervalFormat.value): "")
+  const validDateTime = computed(() => isValidDateTime(dateTimeText.value, originFormat.value))
+  const dateTime = computed(() => validDateTime.value ? toDate(dateTimeText.value, originFormat.value) : undefined)
+  const formattedDateTime = computed(() => dateTime.value ? formatDateTime(dateTime.value, orUndefined(format.value)) : "")
+  const periodInterval = computed(() => dateTime.value ? toPeriodInterval(dateTime.value) : "")
+  const formattedPeriodInterval = computed(() => periodInterval.value ? formatPeriodInterval(periodInterval.value, intervalFormat.value): "")
 
-    function orUndefined<T>(value: T) {
-      return value || undefined;
-    }
+  function orUndefined<T>(value: T) {
+    return value || undefined;
+  }
 </script>
