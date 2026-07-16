@@ -118,6 +118,9 @@ toInitials("Seu texto aqui");
 
 // resultado: HW
 toInitials("Hello world");
+
+// resultado: H
+toInitials("hello");
 ```
 
 ## shrinkText
