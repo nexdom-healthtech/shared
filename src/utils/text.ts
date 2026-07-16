@@ -53,7 +53,7 @@ export function shrinkText(text: string) {
  * Shrinks a string to its initials.
  * @param text any string you want
  * @returns the original text initials, considering the first and last words upper cased (e.g. "hello world, this is a test" => "HT")
- *          if the text has only one word, it will return the first letter duplicated (e.g. "hello" => "HH")
+ *          if the text has only one word, it will return the first letter (e.g. "hello" => "H")
  */
 export function toInitials(text: string) {
   const words = text.trim().toUpperCase().split(" ");
