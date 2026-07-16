@@ -67,5 +67,9 @@ describe("text", () => {
       const text = " hello world, this is a test ";
       expect(toInitials(text)).toBe("HT");
     });
+
+    it("should return only the first letter when text has only one word", () => {
+      expect(toInitials("hello")).toBe("H");
+    });
   });
 });
