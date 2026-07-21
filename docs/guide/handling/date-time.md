@@ -36,7 +36,7 @@
   
   const validDateTime = computed(() => isValidDateTime(dateTimeText.value, originFormat.value))
   const dateTime = computed(() => validDateTime.value ? toDate(dateTimeText.value, originFormat.value) : undefined)
-  const interval = computed(() => toPeriodInterval(toDate(dateTimeText.value,originFormat.value), currentDate))
+  const interval = computed(() => validDateTime.value ? toPeriodInterval(toDate(dateTimeText.value,originFormat.value), currentDate) : undefined)
   
   function navigate(period: Partial<TimePeriod>) {
     if (!dateTime.value) return;
