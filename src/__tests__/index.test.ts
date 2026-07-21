@@ -1,7 +1,12 @@
-import { utils } from "@/index.ts";
+import { utils, models } from "@/index.ts";
 
-describe("utils", () => {
-  it("should be defined", () => {
+describe("index", () => {
+  it("should export utils", () => {
     expect(utils).not.toBeUndefined();
+  });
+
+  it("should export models", () => {
+    expect(models).not.toBe(utils);
+    expect(models).not.toBeUndefined();
   });
 });
