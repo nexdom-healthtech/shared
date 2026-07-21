@@ -25,6 +25,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
+    "./models": "./dist/models.mjs",
     "./utils": "./dist/utils.mjs",
     "./package.json": "./package.json"
   },
