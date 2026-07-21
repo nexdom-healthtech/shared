@@ -2142,10 +2142,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  obug@2.1.3:
-    resolution: {integrity: sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==}
-    engines: {node: '>=12.20.0'}
-
   obug@2.1.4:
     resolution: {integrity: sha512-4a+OsYv9UktOJKE+l1A4OufDgdRF9PifWj+tJnHURo/P+WOxpG4GzUFL9qCalmWauao6ogiG+QvnCovwPoyAWA==}
     engines: {node: '>=12.20.0'}
@@ -2355,9 +2351,6 @@ packages:
   statuses@2.0.2:
     resolution: {integrity: sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==}
     engines: {node: '>= 0.8'}
-
-  std-env@4.1.0:
-    resolution: {integrity: sha512-Rq7ybcX2RuC55r9oaPVEW7/xu3tj8u4GeBYHBWCychFtzMIr86A7e3PPEBPT37sHStKX3+TiX/Fr/ACmJLVlLQ==}
 
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
@@ -3552,8 +3545,8 @@ snapshots:
       istanbul-lib-report: 3.0.1
       istanbul-reports: 3.2.0
       magicast: 0.5.3
-      obug: 2.1.3
-      std-env: 4.1.0
+      obug: 2.1.4
+      std-env: 4.2.0
       tinyrainbow: 3.1.0
       vitest: 4.1.10(@types/node@26.1.0)(@vitest/browser-preview@4.1.10)(@vitest/coverage-v8@4.1.10(@vitest/browser@4.1.10)(vitest@4.1.10))(jsdom@29.1.1)(msw@2.15.0(@types/node@26.1.0)(typescript@6.0.3))(vite@8.1.5(@types/node@26.1.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
     optionalDependencies:
@@ -4374,8 +4367,6 @@ snapshots:
 
   nanoid@3.3.16: {}
 
-  obug@2.1.3: {}
-
   obug@2.1.4: {}
 
   oniguruma-parser@0.12.2: {}
@@ -4629,8 +4620,6 @@ snapshots:
   stackback@0.0.2: {}
 
   statuses@2.0.2: {}
-
-  std-env@4.1.0: {}
 
   std-env@4.2.0: {}
 
