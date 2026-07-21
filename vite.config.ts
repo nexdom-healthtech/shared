@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   pack: {
-    entry: { index: "src/index.ts", utils: "src/utils/index.ts" },
+    entry: { index: "src/index.ts", utils: "src/utils/index.ts", models: "src/models/index.ts" },
     dts: {
       tsgo: true,
     },
