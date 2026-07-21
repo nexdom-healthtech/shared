@@ -105,13 +105,18 @@ export default defineConfig({
       ],
       "/api/": [
         {
+          text: "Modelos",
+          collapsed: false,
+          items: [{ text: "Erros", link: "/api/models/errors" }],
+        },
+        {
           text: "Utilitários",
           collapsed: false,
           items: [
-            { text: "Data e hora", link: "/api/date-time" },
-            { text: "Eventos", link: "/api/events" },
-            { text: "Números", link: "/api/numbers" },
-            { text: "Texto", link: "/api/text" },
+            { text: "Data e hora", link: "/api/utils/date-time" },
+            { text: "Eventos", link: "/api/utils/events" },
+            { text: "Números", link: "/api/utils/numbers" },
+            { text: "Texto", link: "/api/utils/text" },
           ],
         },
       ],
