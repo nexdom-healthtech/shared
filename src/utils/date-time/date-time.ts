@@ -1,5 +1,5 @@
 import { toNumber, padStart } from "@/utils/number.ts";
-import SharedError from "@/models/error.ts";
+import SharedError from "@/models/shared-error.ts";
 import type { TimePeriod } from "@/utils/date-time/types.ts";
 import { FORMAT } from "@/utils/date-time/enums.ts";
 
