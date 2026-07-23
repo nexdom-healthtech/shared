@@ -46,7 +46,7 @@ Erro:
 
   const methodId = useId();
   const method = ref<Exclude<keyof typeof http, "prototype">>("get");
-  const methods = ["get", "post", "put", "delete"];
+  const methods = ["get", "post", "put", "patch", "delete"];
 
   const urlId = useId();
   const url = ref("https://viacep.com.br/ws/01001000/json/");
