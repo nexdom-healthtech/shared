@@ -40,6 +40,12 @@ next: false
             link: './services/request'
         }]
     },{
+        group: "Serviços",
+        methods: [{
+            text: "Requisições",
+            link: './services/request'
+        }]
+    },{
         group: "Utilitários",
         methods: [{
             text: "Data e hora",
