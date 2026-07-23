@@ -10,7 +10,11 @@ import {
 
 describe("dateTime", () => {
   describe("currentDateTime", () => {
-    const date = new Date();
+    let date = new Date();
+
+    beforeEach(() => {
+      date = new Date();
+    });
 
     it("should return pt-BR format by default", () => {
       const current = currentDateTime();
