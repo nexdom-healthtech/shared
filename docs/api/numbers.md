@@ -45,7 +45,7 @@ function padStart(value: number | string, maxLength?: number, fillString?: strin
 
 - Detalhes
 
-Recebe um `number` ou `string` e o transforma em uma `string`, preenchendo a esquerda com o caractere (`fillString`) estipulado até atingir um tamanho estipulado (`maxLength`).
+Recebe um `number` ou `string` e o transforma em uma `string`, preenchendo a esquerda com o caractere (`fillString`) estipulado até atingir um tamanho máximo pré definido (`maxLength`).
 
 Por padrão, o `maxLength` é `2` e a `fillString` `"0"`.
 
