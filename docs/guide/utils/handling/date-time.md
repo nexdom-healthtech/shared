@@ -26,7 +26,7 @@
     navigatePeriod,
     currentDateTime,
     toPeriodInterval
-  } from "../../../dist/utils.mjs"
+  } from "../../../../dist/utils.mjs"
 
   const currentDate = new Date();
 
