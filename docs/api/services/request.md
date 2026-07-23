@@ -9,11 +9,16 @@ Utilizado para realizar requisições HTTP / HTTPS.
 - Tipo
 
 ```ts
+import type { PartialDeep } from "type-fest";
+
+type HttpBody = Record<string, unknown>;
+
 class Http {
-  static async get<T>(uri): Promise<PartialDeep<T>>;
-  static async post<T>(uri, body): Promise<PartialDeep<T>>;
-  static async put<T>(uri, body): Promise<PartialDeep<T>>;
-  static async delete<T>(uri): Promise<PartialDeep<T>>;
+  static async get<T>(uri: string): Promise<PartialDeep<T>>;
+  static async post<T>(uri: string, body?: HttpBody): Promise<PartialDeep<T>>;
+  static async put<T>(uri: string, body?: HttpBody): Promise<PartialDeep<T>>;
+  static async patch<T>(uri: string, body?: HttpBody): Promise<PartialDeep<T>>;
+  static async delete<T>(uri: string): Promise<PartialDeep<T>>;
 }
 ```
 
