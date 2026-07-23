@@ -31,6 +31,12 @@ next: false
             link: './models/errors'
         }]
     },{
+        group: "Serviços",
+        methods: [{
+            text: "Requisições",
+            link: './services/request'
+        }]
+    },{
         group: "Utilitários",
         methods: [{
             text: "Data e hora",

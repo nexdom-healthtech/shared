@@ -90,14 +90,18 @@ export default defineConfig({
           ],
         },
         {
+          text: "Serviços",
+          items: [{ text: "Requisições", link: "/guide/services/request" }],
+        },
+        {
           text: "Utilitários",
           items: [
-            { text: "Formatação", link: "/guide/formatting" },
+            { text: "Formatação", link: "/guide/utils/formatting" },
             {
               text: "Manipulação",
               items: [
-                { text: "Data e Hora", link: "/guide/handling/date-time" },
-                { text: "Eventos", link: "/guide/handling/events" },
+                { text: "Data e Hora", link: "/guide/utils/handling/date-time" },
+                { text: "Eventos", link: "/guide/utils/handling/events" },
               ],
             },
           ],
@@ -108,6 +112,10 @@ export default defineConfig({
           text: "Modelos",
           collapsed: false,
           items: [{ text: "Erros", link: "/api/models/errors" }],
+        },
+        {
+          text: "Serviços",
+          items: [{ text: "Requisições", link: "/api/services/request" }],
         },
         {
           text: "Utilitários",

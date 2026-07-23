@@ -32,7 +32,7 @@ Ouvindo:
 
 <script lang="ts" setup>
   import { useId, ref } from "vue"
-  import { emitCustomEvent, listenEvent, removeListener } from "../../../dist/utils.mjs"
+  import { emitCustomEvent, listenEvent, removeListener } from "../../../../dist/utils.mjs"
 
   const eventId = useId()
   const detailsId = useId()
