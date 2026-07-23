@@ -39,6 +39,16 @@ export default class http {
   }
 
   /**
+   * Dispatch a PATCH request.
+   * @param uri full URL to request
+   * @param body option object to be sent on the body of the request
+   * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
+   */
+  static async patch<T>(uri: string, body?: HttpBody): Promise<PartialDeep<T>> {
+    return await this.request<T>(uri, METHODS.PATCH, body);
+  }
+
+  /**
    * Dispatch a DELETE request.
    * @param uri full URL to request
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
