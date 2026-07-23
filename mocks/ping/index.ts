@@ -4,7 +4,7 @@ export const uri = `https://fake-url.com/ping`;
 export const forbiddenUri = `https://fake-url.com/ping/nothing-here`;
 export const response = { Ok: true };
 
-const methods: Array<keyof typeof http> = ["get", "post", "put", "delete"];
+const methods: Array<keyof typeof http> = ["get", "post", "put", "patch", "delete"];
 
 const validHandlers = methods.map((method) =>
   http[method]<PathParams, object>(uri, async ({ request }) => {
