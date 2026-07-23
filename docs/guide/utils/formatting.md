@@ -76,7 +76,7 @@ As formatações de data e hora levam em consideração os seguintes tokens:
     toPeriodInterval,
     formatPeriodInterval,
     toInitials,
-  } from "../../dist/utils.mjs"
+  } from "../../../dist/utils.mjs"
 
   // Text
   const textId = useId();

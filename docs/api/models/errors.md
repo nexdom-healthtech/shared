@@ -31,3 +31,37 @@ try {
   }
 }
 ```
+
+## SharedApiError
+
+Estende de [`SharedError`](#sharederror).
+
+- Tipo
+
+```ts
+class SharedApiError<T> extends SharedError {
+  status?: number;
+  body?: T;
+
+  constructor(message: string, details?: Details<T>);
+}
+```
+
+- Detalhes
+
+Recebe uma mensagem de erro (`message`) no construtor, juntamento com um objeto (`details`) contendo o status code de erro (`status`), opcional, e o corpo da resposta (`body`), opcional também.
+
+- Exemplo
+
+```ts
+import { SharedApiError } from "@nexdom/shared/models";
+
+try {
+  // ...
+} catch (error: unknown) {
+  if (error instanceof SharedApiError) {
+    console.log(error.status);
+    console.log(error?.body?.description);
+  }
+}
+```
