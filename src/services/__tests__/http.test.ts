@@ -10,6 +10,7 @@ const invalidUri = "this-is-not-an-uri";
 
 const postPayload = { testingPost: true };
 const putPayload = { testingPut: true };
+const patchPayload = { testingPatch: true };
 
 const methods = [
   { method: "get", callback: (uri: string) => http.get(uri), payload: {} },
@@ -22,6 +23,11 @@ const methods = [
     method: "put",
     callback: (uri: string) => http.put(uri, putPayload),
     payload: putPayload,
+  },
+  {
+    method: "patch",
+    callback: (uri: string) => http.patch(uri, patchPayload),
+    payload: patchPayload,
   },
   { method: "delete", callback: (uri: string) => http.delete(uri), payload: {} },
 ];
