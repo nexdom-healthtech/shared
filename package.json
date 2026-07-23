@@ -26,6 +26,7 @@
   "exports": {
     ".": "./dist/index.mjs",
     "./models": "./dist/models.mjs",
+    "./services": "./dist/services.mjs",
     "./utils": "./dist/utils.mjs",
     "./package.json": "./package.json"
   },
@@ -56,10 +57,14 @@
     "jsdom": "^29.1.1",
     "msw": "^2.15.0",
     "oxc-minify": "^0.140.0",
+    "type-fest": "^5.8.0",
     "typescript": "^6.0.3",
     "vite-plus": "^0.2.3",
     "vitepress": "2.0.0-alpha.17",
     "vue": "^3.5.39"
+  },
+  "peerDependencies": {
+    "type-fest": "^5.8.0"
   },
   "commitlint": {
     "extends": [
