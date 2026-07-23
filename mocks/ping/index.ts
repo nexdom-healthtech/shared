@@ -1,22 +1,24 @@
 import { http, HttpResponse, type PathParams } from "msw";
 
 export const uri = `https://fake-url.com/ping`;
+export const forbiddenUri = `https://fake-url.com/ping/nothing-here`;
 export const response = { Ok: true };
 
-const handlers = [
-  http.get(uri, () => {
-    return HttpResponse.json({ ...response });
-  }),
+const methods: Array<keyof typeof http> = ["get", "post", "put", "delete"];
 
-  http.post<PathParams, object>(uri, async ({ request }) => {
-    const data = await request.json();
-    return HttpResponse.json({ ...response, ...data, post: true });
+const validHandlers = methods.map((method) =>
+  http[method]<PathParams, object>(uri, async ({ request }) => {
+    const data = request.body ? await request.json() : {};
+    return HttpResponse.json({ ...response, ...data, [method]: true });
   }),
+);
 
-  http.put<PathParams, object>(uri, async ({ request }) => {
-    const data = await request.json();
-    return HttpResponse.json({ ...response, ...data, put: true });
+const invalidHandlers = methods.map((method) =>
+  http[method]<PathParams, object>(forbiddenUri, () => {
+    return new HttpResponse(null, { status: 403 });
   }),
-];
+);
+
+const handlers = [...validHandlers, ...invalidHandlers];
 
 export default handlers;
