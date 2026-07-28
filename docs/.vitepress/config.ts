@@ -111,7 +111,10 @@ export default defineConfig({
         {
           text: "Modelos",
           collapsed: false,
-          items: [{ text: "Erros", link: "/api/models/errors" }],
+          items: [
+            { text: "Erros", link: "/api/models/errors" },
+            { text: "Tipos", link: "/api/models/types" },
+          ],
         },
         {
           text: "Serviços",
