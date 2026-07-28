@@ -1,4 +1,4 @@
-import SharedError from "@/models/shared-error.ts";
+import SharedError from "@/models/errors/shared-error.ts";
 
 /**
  * Custom API error instance, based on native `Error`.
