@@ -1,4 +1,4 @@
-import SharedApiError from "@/models/shared-api-error.ts";
+import SharedApiError from "@/models/errors/shared-api-error.ts";
 import http from "@/services/http.ts";
 import {
   uri as pingUri,

@@ -1,5 +1,5 @@
-import SharedApiError from "@/models/shared-api-error.ts";
-import SharedError from "@/models/shared-error.ts";
+import SharedApiError from "@/models/errors/shared-api-error.ts";
+import SharedError from "@/models/errors/shared-error.ts";
 
 describe("SharedApiError", () => {
   it("should be a custom API error", () => {
