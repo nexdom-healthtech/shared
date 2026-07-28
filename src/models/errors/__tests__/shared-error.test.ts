@@ -1,4 +1,4 @@
-import SharedError from "@/models/shared-error.ts";
+import SharedError from "@/models/errors/shared-error.ts";
 
 describe("SharedError", () => {
   it("should be a custom error", () => {

@@ -1,4 +1,4 @@
-import SharedApiError from "@/models/shared-api-error.ts";
+import SharedApiError from "@/models/errors/shared-api-error.ts";
 import { METHODS } from "@/services/enums.ts";
 import type { HttpBody } from "@/services/types.ts";
 import type { PartialDeep } from "type-fest";
