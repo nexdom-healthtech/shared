@@ -29,6 +29,9 @@ next: false
         methods: [{
             text: "Erros",
             link: './models/errors'
+        },{
+            text: "Tipos",
+            link: './models/types'
         }]
     },{
         group: "Serviços",
