@@ -6,13 +6,13 @@
 <label :for="eventId">Nome do evento: </label>
 <input :id="eventId" v-model="eventText" required placeholder="Preencha aqui..." />
 
-- [listenEvent](../../api/events#listenevent): <button type="submit">[OUVIR] </button>
-- [removeListener](../../api/events#removelistener): <button @click="removeListener(eventText, callback)" :disabled="!eventText" type="button">[PARAR DE OUVIR]</button>
+- [listenEvent](../../../api/events#listenevent): <button type="submit">[OUVIR] </button>
+- [removeListener](../../../api/events#removelistener): <button @click="removeListener(eventText, callback)" :disabled="!eventText" type="button">[PARAR DE OUVIR]</button>
 
 <label :for="detailsId">Dados adicionais: </label>
 <input :id="detailsId" v-model="detailsText" placeholder="Preencha aqui..." />
 
-- [emitCustomEvent](../../api/events#emitcustomevent): <button @click="emitCustomEvent(eventText, detailsText)" :disabled="!eventText" type="button">[EMITIR]</button>
+- [emitCustomEvent](../../../api/events#emitcustomevent): <button @click="emitCustomEvent(eventText, detailsText)" :disabled="!eventText" type="button">[EMITIR]</button>
 
 </form>
 
