@@ -121,10 +121,6 @@ export default defineConfig({
           items: [{ text: "Requisições", link: "/api/services/request" }],
         },
         {
-          text: "Serviços",
-          items: [{ text: "Requisições", link: "/api/services/request" }],
-        },
-        {
           text: "Utilitários",
           collapsed: false,
           items: [
