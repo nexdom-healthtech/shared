@@ -5,10 +5,10 @@
 <label :for="dateTimeId">Data/hora: </label>
 <input :id="dateTimeId" v-model="dateTimeText" :placeholder="originFormat" />
 
-- [isValidDateTime](../../../api/date-time#formatdatetime): {{ validDateTime }}
-- [toDate](../../../api/date-time#todate): {{ dateTime ?? "" }}
-- [toPeriodInterval](../../../api/date-time#toperiodinterval) (até data e hora atual): {{ interval }}
-- [navigatePeriod](../../../api/date-time#navigateperiod):
+- [isValidDateTime](../../../api/utils/date-time#formatdatetime): {{ validDateTime }}
+- [toDate](../../../api/utils/date-time#todate): {{ dateTime ?? "" }}
+- [toPeriodInterval](../../../api/utils/date-time#toperiodinterval) (até data e hora atual): {{ interval }}
+- [navigatePeriod](../../../api/utils/date-time#navigateperiod):
   - <button :disabled="!validDateTime" @click="navigate({years: -1})">[-1 ANO]</button> <button :disabled="!validDateTime" @click="navigate({years: 1})">[+1 ANO]</button>
   - <button :disabled="!validDateTime" @click="navigate({months: -1})">[-1 MÊS]</button> <button :disabled="!validDateTime" @click="navigate({months: 1})">[+1 MÊS]</button>
   - <button :disabled="!validDateTime" @click="navigate({days: -1})">[-1 DIAS]</button> <button :disabled="!validDateTime" @click="navigate({days: 1})">[+1 DIAS]</button>

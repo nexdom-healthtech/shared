@@ -7,26 +7,26 @@ Abaixo temos exemplos interativos com nossos métodos para formatações.
 <label :for="textId">Texto original: </label>
 <input :id="textId" v-model="text" placeholder="Preencha aqui..." />
 
-- [kebab-case](../../api/text#tokebab): {{ toKebab(text) }}
-- [camelCase](../../api/text#tocamel): {{ toCamel(text) }}
-- [Title Case](../../api/text#totitle): {{ toTitle(text) }}
-- [Sentence Case](../../api/text#tosentence): {{ toSentence(text) }}
-- [Initials](../../api/text#toinitials): {{ toInitials(text) }}
-- [Shrink Case](../../api/text#shrinktext): {{ shrinkText(text) }}
+- [kebab-case](../../api/utils/text#tokebab): {{ toKebab(text) }}
+- [camelCase](../../api/utils/text#tocamel): {{ toCamel(text) }}
+- [Title Case](../../api/utils/text#totitle): {{ toTitle(text) }}
+- [Sentence Case](../../api/utils/text#tosentence): {{ toSentence(text) }}
+- [Initials](../../api/utils/text#toinitials): {{ toInitials(text) }}
+- [Shrink Case](../../api/utils/text#shrinktext): {{ shrinkText(text) }}
 
 ## Números
 
 <label :for="numberTextId">Texto original: </label>
 <input :id="numberTextId" v-model="numberText" placeholder="0" />
 
-- [toNumber](../../api/numbers#tonumber): {{ toNumber(numberText) }}
+- [toNumber](../../api/utils/numbers#tonumber): {{ toNumber(numberText) }}
 
 <label :for="paddingId">Tamanho final: </label>
 <input :id="paddingId" v-model.number="padding" type="number" min="0" placeholder="2" />
 <label :for="fillStringId">Preencher com: </label>
 <input :id="fillStringId" v-model="fillWith" placeholder="0" />
 
-- [padStart](../../api/numbers#padstart): {{ padStart(numberText, orUndefined(padding), orUndefined(fillWith)) }}
+- [padStart](../../api/utils/numbers#padstart): {{ padStart(numberText, orUndefined(padding), orUndefined(fillWith)) }}
 
 ## Data e hora
 
@@ -45,19 +45,19 @@ As formatações de data e hora levam em consideração os seguintes tokens:
 <label :for="formatId">Formato final: </label>
 <input :id="formatId" v-model="format" placeholder="DD/MM/YYYY" />
 
-- [currentDateTime](../../api/date-time#currentdatetime): {{ currentDateTime(orUndefined(format)) }}
+- [currentDateTime](../../api/utils/date-time#currentdatetime): {{ currentDateTime(orUndefined(format)) }}
 
 <label :for="originFormatId">Formato origem: </label>
 <input :id="originFormatId" v-model="originFormat" :placeholder="format" />
 <label :for="dateTimeId">Data/hora: </label>
 <input :id="dateTimeId" v-model="dateTimeText" :placeholder="originFormat" />
 
-- [formatDateTime](../../api/date-time#formatdatetime): {{ formattedDateTime }}
+- [formatDateTime](../../api/utils/date-time#formatdatetime): {{ formattedDateTime }}
 
 <label :for="intervalFormatId">Formato intervalo: </label>
 <input :id="intervalFormatId" v-model="intervalFormat" placeholder="YYYYa, MMm, DDd" />
 
-- [formatPeriodInterval](../../api/date-time#formatperiodinterval): {{ formattedPeriodInterval }}
+- [formatPeriodInterval](../../api/utils/date-time#formatperiodinterval): {{ formattedPeriodInterval }}
 
 <script lang="ts" setup>
   import { useId, ref, computed } from "vue"
