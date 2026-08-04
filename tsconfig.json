@@ -1,5 +1,13 @@
 {
-  "include": ["src/**/*", "*.md", "docs/**/*.ts", "docs/**/*.vue", "docs/**/*.md", "mocks/**/*"],
+  "include": [
+    "src/**/*",
+    "*.md",
+    "docs/**/*.ts",
+    "docs/**/*.vue",
+    "docs/**/*.md",
+    "docs/.vitepress/**/*",
+    "mocks/**/*"
+  ],
   "vueCompilerOptions": {
     "vitePressExtensions": [".md"]
   },
