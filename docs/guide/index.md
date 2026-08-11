@@ -8,9 +8,15 @@ outline: deep
 
 ## Casos de uso
 
+### Serviços
+
+Temos serviços disponíveis para lidar com:
+
+- [Requisições HTTP/HTTPS](../api/services/request):
+
 ### Utilitários
 
-Temos recursos para lidar com:
+Também temos suporte para:
 
 - [Texto](../api/utils/text):
   - formatação (exemplo: kebab, camel, title e sentence case)
