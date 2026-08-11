@@ -107,6 +107,7 @@ export default defineConfig({
             {
               text: "Manipulação",
               items: [
+                { text: "Cookies", link: "/guide/utils/handling/cookies" },
                 { text: "Data e Hora", link: "/guide/utils/handling/date-time" },
                 { text: "Eventos", link: "/guide/utils/handling/events" },
               ],
@@ -131,6 +132,7 @@ export default defineConfig({
           text: "Utilitários",
           collapsed: false,
           items: [
+            { text: "Cookies", link: "/api/utils/cookies" },
             { text: "Data e hora", link: "/api/utils/date-time" },
             { text: "Eventos", link: "/api/utils/events" },
             { text: "Números", link: "/api/utils/numbers" },

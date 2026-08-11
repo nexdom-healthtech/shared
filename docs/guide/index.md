@@ -31,5 +31,8 @@ Também temos suporte para:
   - validar data e hora dentro atende formato especificado
   - avançar ou retroceder entre datas e horas
   - obter e formatar períodos de intervalo de tempo
-- [Tratativas para eventos](../api/utils/events)
-  - ouvir e emitir eventos customizados
+- Tratativas para:
+  - [Eventos](../api/utils/events)
+    - ouvir e emitir eventos customizados
+  - [Cookies](../api/utils/cookies)
+    - criar, ler, atualizar e apagar
