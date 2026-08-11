@@ -50,7 +50,7 @@ export default defineConfig({
   test: {
     globals: true,
     clearMocks: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     coverage: { reporter: ["text"] },
     setupFiles: ["src/__tests__/setup.ts"],
   },
