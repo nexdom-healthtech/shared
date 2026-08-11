@@ -42,6 +42,9 @@ next: false
     },{
         group: "Utilitários",
         methods: [{
+            text: "Cookies",
+            link: './utils/cookies'
+        },{
             text: "Data e hora",
             link: './utils/date-time'
         },{
