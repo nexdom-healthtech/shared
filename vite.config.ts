@@ -51,7 +51,12 @@ export default defineConfig({
     globals: true,
     clearMocks: true,
     environment: "happy-dom",
-    coverage: { reporter: ["text"] },
+    coverage: {
+      reporter: ["text"],
+      thresholds: {
+        lines: 95,
+      },
+    },
     setupFiles: ["src/__tests__/setup.ts"],
   },
 });
