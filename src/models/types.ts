@@ -23,4 +23,4 @@ import type { ConditionalExcept } from "type-fest";
  * }
  * ```
  */
-export type ConstructorParams<T> = ConditionalExcept<T, (...args: any[]) => any>;
+export type ConstructorParams<T> = ConditionalExcept<T, (...args: unknown[]) => unknown>;
