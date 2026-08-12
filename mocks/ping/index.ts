@@ -1,14 +1,14 @@
 import { http, HttpResponse, type PathParams } from "msw";
 
-export const uri = `https://fake-url.com/ping`;
-export const forbiddenUri = `https://fake-url.com/ping/nothing-here`;
+export const url = `https://fake-url.com/ping`;
+export const forbiddenUrl = `https://fake-url.com/ping/nothing-here`;
 export const authorization = "Q3liZXJkeW5lIFQtODAw";
 export const response = { Ok: true };
 
 const methods: Array<keyof typeof http> = ["get", "post", "put", "patch", "delete"];
 
 const validHandlers = methods.map((method) =>
-  http[method]<PathParams, object>(uri, async ({ request }) => {
+  http[method]<PathParams, object>(url, async ({ request }) => {
     if (request.headers.get("Authorization") !== authorization) {
       return new HttpResponse(null, { status: 401 });
     }
@@ -19,7 +19,7 @@ const validHandlers = methods.map((method) =>
 );
 
 const invalidHandlers = methods.map((method) =>
-  http[method]<PathParams, object>(forbiddenUri, () => {
+  http[method]<PathParams, object>(forbiddenUrl, () => {
     return new HttpResponse(null, { status: 403 });
   }),
 );
