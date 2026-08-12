@@ -19,8 +19,11 @@ Se tratando de requisições REST, podemos aproveitar o serviço [`http`](../../
 <label :for="urlId">URL: </label>
 <input :id="urlId" v-model="url" type="url" :disabled="loading" required />
 
-<label :for="bodyId">JSON: </label>
-<textarea :id="bodyId" v-model="body" :disabled="loading" placeholder="Corpo da requisição..." />
+<label :for="bodyId">Corpo da requisição: </label>
+<textarea :id="bodyId" v-model="body" :disabled="loading" placeholder="JSON..." />
+
+<label :for="headersId">Cabeçalhos: </label>
+<textarea :id="headersId" v-model="headers" :disabled="loading" placeholder="JSON..." />
 
 <button type="submit" :disabled="loading">
   {{ loading ? "Carregando..." : "[ENVIAR]" }}
@@ -41,8 +44,8 @@ Erro:
 ```
 
 <script lang="ts" setup>
-  import { useId, ref } from "vue"
-  import { http } from "../../../dist/services.mjs"
+  import { useId, ref } from "vue";
+  import { http } from "../../../dist/services.mjs";
 
   const methodId = useId();
   const method = ref<Exclude<keyof typeof http, "prototype">>("get");
@@ -54,9 +57,12 @@ Erro:
   const bodyId = useId();
   const body = ref("");
 
-  const response = ref("")
-  const error = ref("")
-  const loading = ref(false)
+  const headersId = useId();
+  const headers = ref("");
+
+  const response = ref("");
+  const error = ref("");
+  const loading = ref(false);
 
   async function onSubmit() {
     response.value = "";
@@ -64,9 +70,10 @@ Erro:
     loading.value = true;
 
     try {
-      const json = body.value ? JSON.parse(body.value) : "";
-      const httpResponse = await http[method.value](url.value, json);
-      response.value = JSON.stringify(httpResponse)
+      const bodyJson = body.value ? JSON.parse(body.value) : "";
+      const headersJson = headers.value ? JSON.parse(headers.value) : "";
+      const httpResponse = await http[method.value](url.value, {body: bodyJson, headers: headersJson});
+      response.value = JSON.stringify(httpResponse);
     } catch (e) {
       error.value = JSON.stringify(e);
     } finally {
