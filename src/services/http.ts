@@ -1,5 +1,5 @@
 import SharedApiError from "@/models/errors/shared-api-error.ts";
-import { METHODS } from "@/services/enums.ts";
+import { Methods } from "@/services/enums.ts";
 import type { HttpOptions } from "@/services/types.ts";
 import type { PartialDeep } from "type-fest";
 
@@ -16,7 +16,7 @@ export default class Http {
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
   static async get<T>(url: string, options?: Omit<HttpOptions, "body">): Promise<PartialDeep<T>> {
-    return await this.request<T>(url, METHODS.GET, options);
+    return await this.request<T>(url, Methods.GET, options);
   }
 
   /**
@@ -26,7 +26,7 @@ export default class Http {
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
   static async post<T>(url: string, options?: HttpOptions): Promise<PartialDeep<T>> {
-    return await this.request<T>(url, METHODS.POST, options);
+    return await this.request<T>(url, Methods.POST, options);
   }
 
   /**
@@ -36,7 +36,7 @@ export default class Http {
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
   static async put<T>(url: string, options?: HttpOptions): Promise<PartialDeep<T>> {
-    return await this.request<T>(url, METHODS.PUT, options);
+    return await this.request<T>(url, Methods.PUT, options);
   }
 
   /**
@@ -46,7 +46,7 @@ export default class Http {
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
   static async patch<T>(url: string, options?: HttpOptions): Promise<PartialDeep<T>> {
-    return await this.request<T>(url, METHODS.PATCH, options);
+    return await this.request<T>(url, Methods.PATCH, options);
   }
 
   /**
@@ -59,12 +59,12 @@ export default class Http {
     url: string,
     options?: Omit<HttpOptions, "body">,
   ): Promise<PartialDeep<T>> {
-    return await this.request<T>(url, METHODS.DELETE, options);
+    return await this.request<T>(url, Methods.DELETE, options);
   }
 
   private static async request<T>(
     url: string,
-    method: METHODS,
+    method: Methods,
     { body, headers }: HttpOptions = {},
   ): Promise<PartialDeep<T>> {
     try {
