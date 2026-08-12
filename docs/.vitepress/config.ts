@@ -94,6 +94,7 @@ export default defineConfig({
           items: [
             { text: "O que é shared?", link: "/guide/" },
             { text: "Iniciando", link: "/guide/getting-started" },
+            { text: "Guia para atualização", link: "/guide/upgrade-guide" },
           ],
         },
         {
