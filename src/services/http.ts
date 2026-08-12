@@ -11,59 +11,59 @@ export default class Http {
 
   /**
    * Dispatch a GET request.
-   * @param uri full URL to request
+   * @param url full URL to request
    * @param options [optional] object containing request headers
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
-  static async get<T>(uri: string, options?: Omit<HttpOptions, "body">): Promise<PartialDeep<T>> {
-    return await this.request<T>(uri, METHODS.GET, options);
+  static async get<T>(url: string, options?: Omit<HttpOptions, "body">): Promise<PartialDeep<T>> {
+    return await this.request<T>(url, METHODS.GET, options);
   }
 
   /**
    * Dispatch a POST request.
-   * @param uri full URL to request
+   * @param url full URL to request
    * @param options [optional] object containing request body and headers
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
-  static async post<T>(uri: string, options?: HttpOptions): Promise<PartialDeep<T>> {
-    return await this.request<T>(uri, METHODS.POST, options);
+  static async post<T>(url: string, options?: HttpOptions): Promise<PartialDeep<T>> {
+    return await this.request<T>(url, METHODS.POST, options);
   }
 
   /**
    * Dispatch a PUT request.
-   * @param uri full URL to request
+   * @param url full URL to request
    * @param options [optional] object containing request body and headers
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
-  static async put<T>(uri: string, options?: HttpOptions): Promise<PartialDeep<T>> {
-    return await this.request<T>(uri, METHODS.PUT, options);
+  static async put<T>(url: string, options?: HttpOptions): Promise<PartialDeep<T>> {
+    return await this.request<T>(url, METHODS.PUT, options);
   }
 
   /**
    * Dispatch a PATCH request.
-   * @param uri full URL to request
+   * @param url full URL to request
    * @param options [optional] object containing request body and headers
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
-  static async patch<T>(uri: string, options?: HttpOptions): Promise<PartialDeep<T>> {
-    return await this.request<T>(uri, METHODS.PATCH, options);
+  static async patch<T>(url: string, options?: HttpOptions): Promise<PartialDeep<T>> {
+    return await this.request<T>(url, METHODS.PATCH, options);
   }
 
   /**
    * Dispatch a DELETE request.
-   * @param uri full URL to request
+   * @param url full URL to request
    * @param options [optional] object containing request headers
    * @returns a promise resolving the response of the request or throws an error if the request wasn't a success
    */
   static async delete<T>(
-    uri: string,
+    url: string,
     options?: Omit<HttpOptions, "body">,
   ): Promise<PartialDeep<T>> {
-    return await this.request<T>(uri, METHODS.DELETE, options);
+    return await this.request<T>(url, METHODS.DELETE, options);
   }
 
   private static async request<T>(
-    uri: string,
+    url: string,
     method: METHODS,
     { body, headers }: HttpOptions = {},
   ): Promise<PartialDeep<T>> {
@@ -72,11 +72,11 @@ export default class Http {
       if (body) requestInit.body = JSON.stringify(body);
       if (headers) requestInit.headers = new Headers(headers);
 
-      const response = await fetch(uri, requestInit);
+      const response = await fetch(url, requestInit);
       const json = await this.toJSON<T>(response);
 
       if (!response.ok) {
-        const message = this.generateErrorMessage(method, uri, response.statusText);
+        const message = this.generateErrorMessage(method, url, response.statusText);
         throw new SharedApiError(message, { status: response.status, body: json });
       }
 
@@ -84,14 +84,14 @@ export default class Http {
     } catch (e: unknown) {
       if (e instanceof SharedApiError) throw e;
 
-      const message = this.generateErrorMessage(method, uri);
+      const message = this.generateErrorMessage(method, url);
       throw new SharedApiError(message);
     }
   }
 
-  private static generateErrorMessage(method: string, uri: string, statusText?: string) {
+  private static generateErrorMessage(method: string, url: string, statusText?: string) {
     const status = statusText ? ` ${statusText}` : "";
-    return `${method} to ${uri}${status}`;
+    return `${method} to ${url}${status}`;
   }
 
   private static async toJSON<T>(response: Response): Promise<PartialDeep<T>> {
