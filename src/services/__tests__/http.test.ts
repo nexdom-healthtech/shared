@@ -4,32 +4,35 @@ import {
   uri as pingUri,
   forbiddenUri as pingForbiddenUri,
   response as pingResponse,
+  authorization as pintAuthorization,
 } from "@mocks/ping/index.ts";
 
 const invalidUri = "this-is-not-an-uri";
+const headers = { Authorization: pintAuthorization };
+const requestOptions = { headers };
 
 const postPayload = { testingPost: true };
 const putPayload = { testingPut: true };
 const patchPayload = { testingPatch: true };
 
 const methods = [
-  { method: "get", callback: (uri: string) => http.get(uri), payload: {} },
+  { method: "get", callback: (uri: string) => http.get(uri, requestOptions), payload: {} },
   {
     method: "post",
-    callback: (uri: string) => http.post(uri, postPayload),
+    callback: (uri: string) => http.post(uri, { ...requestOptions, body: postPayload }),
     payload: postPayload,
   },
   {
     method: "put",
-    callback: (uri: string) => http.put(uri, putPayload),
+    callback: (uri: string) => http.put(uri, { ...requestOptions, body: putPayload }),
     payload: putPayload,
   },
   {
     method: "patch",
-    callback: (uri: string) => http.patch(uri, patchPayload),
+    callback: (uri: string) => http.patch(uri, { ...requestOptions, body: patchPayload }),
     payload: patchPayload,
   },
-  { method: "delete", callback: (uri: string) => http.delete(uri), payload: {} },
+  { method: "delete", callback: (uri: string) => http.delete(uri, requestOptions), payload: {} },
 ];
 
 describe("http", () => {
