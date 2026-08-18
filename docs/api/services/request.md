@@ -11,7 +11,7 @@ Utilizado para realizar requisições HTTP / HTTPS.
 ```ts
 import type { PartialDeep } from "type-fest";
 
-type HttpBody = Record<string, unknown>;
+type HttpBody = Record<string, any>;
 type HttpHeaders = Record<string, string>;
 type HttpOptions = { body?: HttpBody; headers?: HttpHeaders };
 

@@ -3,5 +3,5 @@ export interface HttpOptions {
   headers?: HttpHeaders;
 }
 
-type HttpBody = Record<string, unknown>;
+type HttpBody = Record<string, any>;
 type HttpHeaders = Record<string, string>;
