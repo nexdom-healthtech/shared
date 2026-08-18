@@ -17,11 +17,9 @@ This projects has the following main folders inside `src`:
 - Models:
   - It contains several models (vanilla classes), that offers basic methods related to its concerns.
   - Those are exported from `src/models/index.ts` to `src/index.ts`.
-  - _This directory still just a thought._
 - Services:
   - It contains resources related to HTTP requests.
   - Those are exported from `src/services/index.ts` to `src/index.ts`.
-  - _This directory still just a thought._
 - Utils:
   - It contains several utilities that are exported from `src/utils/index.ts` to `src/index.ts`.
 
