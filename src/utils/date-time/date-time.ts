@@ -115,7 +115,6 @@ export function toPeriodInterval(fromDate: Date, untilDate = new Date()): TimePe
   if (minutes > 0) date.setMinutes(date.getMinutes() + minutes);
 
   let seconds = Math.floor(diff(date, untilDate) / 1000);
-  if (seconds > 0) date.setSeconds(date.getSeconds() + seconds);
 
   return { years, months, days, hours, minutes, seconds };
 }

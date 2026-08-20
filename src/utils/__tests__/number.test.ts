@@ -12,6 +12,12 @@ describe("number", () => {
       const text = "015";
       expect(toNumber(text)).toBe(15);
     });
+
+    it("should return default value for undefined or null", () => {
+      const defaultValue = 123;
+      expect(toNumber(undefined, defaultValue)).toBe(defaultValue);
+      expect(toNumber(null, defaultValue)).toBe(defaultValue);
+    });
   });
 
   describe("padStart", () => {

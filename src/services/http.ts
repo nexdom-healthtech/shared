@@ -69,8 +69,8 @@ export default class Http {
   ): Promise<PartialDeep<T>> {
     try {
       const requestInit: RequestInit = { method };
-      if (body) requestInit.body = JSON.stringify(body);
-      if (headers) requestInit.headers = new Headers(headers);
+      requestInit.body = JSON.stringify(body);
+      requestInit.headers = new Headers(headers);
 
       const response = await fetch(url, requestInit);
       const json = await this.toJSON<T>(response);

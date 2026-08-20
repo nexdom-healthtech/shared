@@ -56,6 +56,15 @@ describe("dateTime", () => {
       const result = toDate(stringDate, "YYYY-MM-DD HH:mm:ss");
       expect(result.getTime()).toBe(date.getTime());
     });
+
+    it("throws an error when date doesn't match format", () => {
+      const format = "YYYY-MM-DD HH : mm : ss";
+      expect(() => toDate(stringDate, format)).toThrow(
+        expect.objectContaining({
+          message: `Date "${stringDate}" doesn't match specified format "${format}"`,
+        }),
+      );
+    });
   });
 
   describe("toPeriodInterval", () => {
@@ -158,19 +167,19 @@ describe("dateTime", () => {
 
   describe("isValidDateTime", () => {
     it("should validate dates", () => {
-      expect(isValidDateTime("2002-12-18", "YYYY-MM-DD")).toBeTruthy();
-      expect(isValidDateTime("18/12/2002", "DD/MM/YYYY")).toBeTruthy();
-      expect(isValidDateTime("2002-12-a", "YYYY-MM-DD")).toBeFalsy();
-      expect(isValidDateTime("2002-b-18", "YYYY-MM-DD")).toBeFalsy();
-      expect(isValidDateTime("c-12-18", "YYYY-MM-DD")).toBeFalsy();
+      expect(isValidDateTime("2002-12-18", "YYYY-MM-DD")).toBe(true);
+      expect(isValidDateTime("18/12/2002", "DD/MM/YYYY")).toBe(true);
+      expect(isValidDateTime("2002-12-a", "YYYY-MM-DD")).toBe(false);
+      expect(isValidDateTime("2002-b-18", "YYYY-MM-DD")).toBe(false);
+      expect(isValidDateTime("c-12-18", "YYYY-MM-DD")).toBe(false);
     });
 
     it("should validate times", () => {
-      expect(isValidDateTime("18:45:11", "HH:mm:ss")).toBeTruthy();
-      expect(isValidDateTime("23:30", "HH:mm")).toBeTruthy();
-      expect(isValidDateTime("a:45:11", "HH:mm:ss")).toBeFalsy();
-      expect(isValidDateTime("18:b:11", "HH:mm:ss")).toBeFalsy();
-      expect(isValidDateTime("18:45:c", "HH:mm:ss")).toBeFalsy();
+      expect(isValidDateTime("18:45:11", "HH:mm:ss")).toBe(true);
+      expect(isValidDateTime("23:30", "HH:mm")).toBe(true);
+      expect(isValidDateTime("a:45:11", "HH:mm:ss")).toBe(false);
+      expect(isValidDateTime("18:b:11", "HH:mm:ss")).toBe(false);
+      expect(isValidDateTime("18:45:c", "HH:mm:ss")).toBe(false);
     });
 
     it("should validate date times", () => {
