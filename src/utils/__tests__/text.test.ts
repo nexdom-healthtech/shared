@@ -3,7 +3,7 @@ import { shrinkText, toCamel, toInitials, toKebab, toSentence, toTitle } from "@
 describe("text", () => {
   describe("toKebab", () => {
     it("should transform any text into kebab case", () => {
-      const text = "Hello World";
+      const text = "Hello  World";
       const result = toKebab(text);
       expect(result).toBe("hello-world");
     });
@@ -13,6 +13,10 @@ describe("text", () => {
       const result = toKebab(text);
       expect(result).toBe("hello-world");
     });
+
+    it("should return empty strings as empty", () => {
+      expect(toKebab("")).toBe("");
+    });
   });
 
   describe("toCamel", () => {
@@ -20,6 +24,10 @@ describe("text", () => {
       const text = "Hello World";
       const result = toCamel(text);
       expect(result).toBe("helloWorld");
+    });
+
+    it("should return empty strings as empty", () => {
+      expect(toCamel("")).toBe("");
     });
   });
 
@@ -29,6 +37,10 @@ describe("text", () => {
       const result = toTitle(text);
       expect(result).toBe("Hello World");
     });
+
+    it("should return empty strings as empty", () => {
+      expect(toTitle("")).toBe("");
+    });
   });
 
   describe("toSentence", () => {
@@ -36,6 +48,10 @@ describe("text", () => {
       const text = "hello world";
       const result = toSentence(text);
       expect(result).toBe("Hello world");
+    });
+
+    it("should return empty strings as empty", () => {
+      expect(toSentence("")).toBe("");
     });
   });
 
@@ -51,9 +67,13 @@ describe("text", () => {
     });
 
     it("should trim received text", () => {
-      const text = " hello world, this is a test";
+      const text = " hello world, this is a test ";
       const result = shrinkText(text);
       expect(result).toBe("hello test");
+    });
+
+    it("should return empty strings as empty", () => {
+      expect(shrinkText("")).toBe("");
     });
   });
 
@@ -70,6 +90,10 @@ describe("text", () => {
 
     it("should return only the first letter when text has one word", () => {
       expect(toInitials("hello")).toBe("H");
+    });
+
+    it("should return empty strings as empty", () => {
+      expect(toInitials("")).toBe("");
     });
   });
 });

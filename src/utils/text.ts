@@ -37,7 +37,7 @@ export function toTitle(text: string) {
  */
 export function toSentence(text: string) {
   const sentenceText = toKebab(text).replaceAll("-", " ");
-  return sentenceText.replace(/^(.)/, (_, letter) => letter.toUpperCase());
+  return sentenceText.replace(/(\w)/, (_, letter) => letter.toUpperCase());
 }
 
 /**
@@ -46,7 +46,7 @@ export function toSentence(text: string) {
  * @returns the original text with only the first and last words (e.g. "hello world, this is a test" => "hello test")
  */
 export function shrinkText(text: string) {
-  return text.trim().replace(/^(\w+)\s.*\s(.+)/, "$1 $2");
+  return toFirstAndLastWords(text);
 }
 
 /**
@@ -56,11 +56,15 @@ export function shrinkText(text: string) {
  *          if the text has only one word, it will return the first letter (e.g. "hello" => "H")
  */
 export function toInitials(text: string) {
-  const words = text.trim().toUpperCase().split(" ");
-  const firstWord = words.shift() ?? "";
-  const lastWord = words.pop() ?? "";
+  const [firstWord, lastWord = ""] = toFirstAndLastWords(text).toUpperCase().split(" ");
   const firstLetter = firstWord[0] ?? "";
   const lastLetter = lastWord[0] ?? "";
-
   return `${firstLetter}${lastLetter}`;
+}
+
+function toFirstAndLastWords(text: string) {
+  const words = text.trim().split(" ");
+  const firstWord = words[0];
+  const lastWord = words.length > 1 ? ` ${words[words.length - 1]}` : "";
+  return `${firstWord}${lastWord}`;
 }

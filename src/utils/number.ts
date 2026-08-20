@@ -5,7 +5,7 @@
  * @returns a number
  */
 export function toNumber(text?: string | null, defaultValue = 0) {
-  if (text === undefined || text === null) return defaultValue;
+  if (text === null) return defaultValue;
   const number = Number(text);
   return Number.isNaN(number) ? defaultValue : number;
 }

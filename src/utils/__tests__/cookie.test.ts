@@ -21,7 +21,6 @@ describe("cookie", () => {
   describe("setCookie", () => {
     it("should register a cookie and relate it to its key", async () => {
       const expectedValue = "this is a new cookie!";
-
       await setCookie(key, expectedValue);
 
       const value = await getCookie(key);
@@ -31,6 +30,9 @@ describe("cookie", () => {
 
   describe("deleteCookie", () => {
     it("should remove a cookie by its key", async () => {
+      const expectedValue = "this is a new new cookie!";
+      await setCookie(key, expectedValue);
+
       await deleteCookie(key);
 
       const value = await getCookie(key);
