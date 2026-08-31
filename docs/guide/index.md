@@ -31,6 +31,8 @@ Também temos suporte para:
   - validar data e hora dentro atende formato especificado
   - avançar ou retroceder entre datas e horas
   - obter e formatar períodos de intervalo de tempo
+- [Validações](../api/utils/validating)
+  - validar `strings` vazias, e-mails, telefones e URLs
 - Tratativas para:
   - [Eventos](../api/utils/events)
     - ouvir e emitir eventos customizados

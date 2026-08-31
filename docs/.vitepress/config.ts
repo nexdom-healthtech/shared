@@ -105,6 +105,7 @@ export default defineConfig({
           text: "Utilitários",
           items: [
             { text: "Formatação", link: "/guide/utils/formatting" },
+            { text: "Validação", link: "/guide/utils/validating" },
             {
               text: "Manipulação",
               items: [
