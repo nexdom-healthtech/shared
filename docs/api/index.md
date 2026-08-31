@@ -56,6 +56,9 @@ next: false
         },{
             text: "Texto",
             link: './utils/text'
+        },{
+            text: "Validações",
+            link: './utils/validating'
         }]
     }];
 </script>
