@@ -3,7 +3,7 @@
  * @param value any string you want
  * @returns true if `value` is empty
  */
-export function isEmpty(value?: string): boolean {
+export function isEmpty(value?: string): value is undefined {
   return !value || value.trim().length === 0;
 }
 
