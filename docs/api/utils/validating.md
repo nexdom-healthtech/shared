@@ -9,7 +9,7 @@ Retorna `true` se o valor informado estiver vazio.
 - Tipo
 
 ```ts
-function isEmpty(value?: string): boolean;
+function isEmpty(value?: string): value is undefined;
 ```
 
 - Detalhes
