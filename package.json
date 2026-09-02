@@ -62,7 +62,7 @@
     "msw": "^2.15.0",
     "oxc-minify": "^0.142.0",
     "type-fest": "^5.8.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vite-plus": "^0.2.6",
     "vitepress": "2.0.0-alpha.19",
     "vitepress-plugin-group-icons": "^1.7.6",
