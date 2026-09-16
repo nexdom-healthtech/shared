@@ -13,7 +13,7 @@ export function isEmpty(value?: string): value is undefined {
  * @returns true if `value`is a valid phone number
  */
 export function isPhone(value: string): boolean {
-  return /^\+?(?:55)?\s?\(?[1-9]{2}\)?\s?[9]?[0-9]{4}-?[0-9]{4}$/.test(value);
+  return /^\+?(?:55)?\s?\(?[1-9]{2}\)?\s?[9]?\d{4}-?\d{4}$/.test(value);
 }
 
 /**
