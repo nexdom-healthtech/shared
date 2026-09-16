@@ -22,7 +22,7 @@ Também temos suporte para:
   - formatação (exemplo: kebab, camel, title e sentence case)
   - reduzir
 - [Números](../api/utils/numbers):
-  - converter para numérico
+  - conversões relacionadas a numéricos
   - formatar números
 - [Data e hora](../api/utils/date-time):
   - formatar data e hora atual

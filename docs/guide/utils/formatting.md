@@ -20,6 +20,7 @@ Abaixo temos exemplos interativos com nossos métodos para formatações.
 <input :id="numberTextId" v-model="numberText" placeholder="0" />
 
 - [toNumber](../../api/utils/numbers#tonumber): {{ toNumber(numberText) }}
+- [toPositiveNumber](../../api/utils/numbers#topositivenumber): {{ toPositiveNumber(toNumber(numberText)) }}
 
 <label :for="paddingId">Tamanho final: </label>
 <input :id="paddingId" v-model.number="padding" type="number" min="0" placeholder="2" />
@@ -69,6 +70,7 @@ As formatações de data e hora levam em consideração os seguintes tokens:
     shrinkText,
     toNumber,
     padStart,
+    toPositiveNumber,
     currentDateTime,
     formatDateTime,
     toDate,
