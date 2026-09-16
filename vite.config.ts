@@ -20,6 +20,9 @@ export default defineConfig({
         command: "vpx vitepress preview docs",
         dependsOn: ["docs:build"],
       },
+      sonar: {
+        command: "vpx sonar-scanner",
+      },
     },
   },
   pack: {
@@ -52,9 +55,9 @@ export default defineConfig({
     clearMocks: true,
     environment: "happy-dom",
     coverage: {
-      reporter: ["text"],
+      reporter: process.env.CI ? ["text", "lcov"] : ["text", "html"],
       thresholds: {
-        lines: 95,
+        "100": true,
       },
     },
     setupFiles: ["src/__tests__/setup.ts"],
