@@ -59,6 +59,7 @@ export default defineConfig({
       thresholds: {
         "100": true,
       },
+      exclude: ["mocks/**"],
     },
     setupFiles: ["src/__tests__/setup.ts"],
   },
