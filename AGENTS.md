@@ -175,16 +175,15 @@ check whether it needs a corresponding entry in `docs/api/**` and/or `docs/guide
 
 ### Commands cheat-sheet
 
-| Command                      | Purpose                                         |
-| ---------------------------- | ----------------------------------------------- |
-| `vpr check` / `vp run check` | Lint, format-check, type-check                  |
-| `vpr test` / `vp run test`   | Unit tests                                      |
-| `vp test --coverage`         | Unit tests with coverage report                 |
-| `vpr test:mutations`         | Mutation tests (Stryker)                        |
-| `vpr depcruise`              | Architecture/dependency rules check             |
-| `vpr docs`                   | Run the docs site locally                       |
-| `vpr build`                  | Build the library for publishing                |
-| `vpr sonar`                  | SonarQube static analysis (needs `SONAR_TOKEN`) |
+| Command                      | Purpose                             |
+| ---------------------------- | ----------------------------------- |
+| `vpr check` / `vp run check` | Lint, format-check, type-check      |
+| `vpr test` / `vp run test`   | Unit tests                          |
+| `vp test --coverage`         | Unit tests with coverage report     |
+| `vpr test:mutations`         | Mutation tests (Stryker)            |
+| `vpr depcruise`              | Architecture/dependency rules check |
+| `vpr docs`                   | Run the docs site locally           |
+| `vpr build`                  | Build the library for publishing    |
 
 ### Before finishing a task
 
