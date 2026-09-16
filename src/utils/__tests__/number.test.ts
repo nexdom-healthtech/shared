@@ -1,4 +1,4 @@
-import { padStart, toNumber } from "@/utils/number.ts";
+import { padStart, toNumber, toPositiveNumber } from "@/utils/number.ts";
 
 describe("number", () => {
   describe("toNumber", () => {
@@ -25,6 +25,22 @@ describe("number", () => {
       const number = 5;
       expect(padStart(number)).toBe("05");
       expect(padStart(number, 3, "1")).toBe("115");
+    });
+  });
+
+  describe("toPositiveNumber", () => {
+    it("should return positive value unchanged", () => {
+      expect(toPositiveNumber(5)).toBe(5);
+      expect(toPositiveNumber(100)).toBe(100);
+    });
+
+    it("should clamp negative value to 0", () => {
+      expect(toPositiveNumber(-5)).toBe(0);
+      expect(toPositiveNumber(-100)).toBe(0);
+    });
+
+    it("should return 0 as 0", () => {
+      expect(toPositiveNumber(0)).toBe(0);
     });
   });
 });

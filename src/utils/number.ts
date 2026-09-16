@@ -19,3 +19,12 @@ export function toNumber(text?: string | null, defaultValue = 0) {
 export function padStart(value: number | string, maxLength = 2, fillString = "0") {
   return value.toString().padStart(maxLength, fillString);
 }
+
+/**
+ * Clamps a number to a minimum of zero.
+ * @param value number to be clamped
+ * @returns `value` if positive, otherwise `0`
+ */
+export function toPositiveNumber(value: number) {
+  return Math.max(0, value);
+}

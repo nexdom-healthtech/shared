@@ -63,3 +63,32 @@ padStart("2", 3);
 // resultado: "xxx3"
 padStart("3", 4, "x");
 ```
+
+## toPositiveNumber
+
+Garante que um número seja positivo.
+
+- Tipo
+
+```ts
+function toPositiveNumber(value: number): number;
+```
+
+- Detalhes
+
+Retorna o valor se for positivo, caso contrário retorna `0`.
+
+- Exemplo
+
+```ts
+import { toPositiveNumber } from "@nexdom/shared/utils";
+
+// resultado: 0
+toPositiveNumber(-5);
+
+// resultado: 10
+toPositiveNumber(10);
+
+// resultado: 0
+toPositiveNumber(0);
+```
