@@ -15,12 +15,15 @@
         "streetsidesoftware.code-spell-checker-portuguese-brazilian",
         "Vue.volar",
         "ms-vscode.live-server",
-        "stryker-mutator.stryker-mutator"
+        "stryker-mutator.stryker-mutator",
+        "anthropic.claude-code",
+        "SonarSource.sonarlint-vscode"
       ],
       "settings": {
         "js/ts.preferences.importModuleSpecifier": "non-relative",
         "vue.server.includeLanguages": ["vue", "markdown"],
-        "cSpell.language": "en,pt,pt_BR"
+        "cSpell.language": "en,pt,pt_BR",
+        "markdown.extension.preview.autoShowPreviewToSide": false
       }
     }
   },
