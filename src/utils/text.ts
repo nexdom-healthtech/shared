@@ -65,6 +65,6 @@ export function toInitials(text: string) {
 function toFirstAndLastWords(text: string) {
   const words = text.trim().split(" ");
   const firstWord = words[0];
-  const lastWord = words.length > 1 ? ` ${words[words.length - 1]}` : "";
+  const lastWord = words.length > 1 ? ` ${words.at(-1)}` : "";
   return `${firstWord}${lastWord}`;
 }
