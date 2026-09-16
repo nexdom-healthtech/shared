@@ -21,6 +21,7 @@ describe("validations", () => {
       expect(isPhone("(47) 3456-7890")).toBeTruthy();
       expect(isPhone("+55 47 3456-7890")).toBeTruthy();
       expect(isPhone("+55 47 34567890")).toBeTruthy();
+      expect(isPhone("xx11988888888")).toBeFalsy();
     });
   });
 
@@ -33,6 +34,8 @@ describe("validations", () => {
       expect(isEmail("admin@gmail.com")).toBeTruthy();
       expect(isEmail("McLovin.Hawaii@gmail.com.br")).toBeTruthy();
       expect(isEmail("ned-schneebly_2003@hotmail.com")).toBeTruthy();
+      expect(isEmail(" admin@gmail.com")).toBeFalsy();
+      expect(isEmail("admin@gmail.com!")).toBeFalsy();
     });
   });
 
@@ -45,6 +48,8 @@ describe("validations", () => {
       expect(isUrl("https://example.com")).toBeTruthy();
       expect(isUrl("https://example.com/path")).toBeTruthy();
       expect(isUrl("https://example.com/path?q=this+is+a+search")).toBeTruthy();
+      expect(isUrl(" http://example.com")).toBeFalsy();
+      expect(isUrl("https://example.com extra")).toBeFalsy();
     });
   });
 });

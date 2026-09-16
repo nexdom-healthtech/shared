@@ -103,6 +103,20 @@ describe("dateTime", () => {
       expect(interval.minutes).toBe(8);
       expect(interval.seconds).toBe(49);
     });
+
+    it("should return a negative interval when fromDate is after untilDate", () => {
+      const fromDate = new Date("2029-11-16 18:43:50");
+      const untilDate = new Date("2028-12-10 19:42:55");
+      const interval = toPeriodInterval(fromDate, untilDate);
+      expect(interval).toEqual({
+        years: -1,
+        months: -12,
+        days: -341,
+        hours: -8184,
+        minutes: -490981,
+        seconds: -29458855,
+      });
+    });
   });
 
   describe("formatPeriodInterval", () => {

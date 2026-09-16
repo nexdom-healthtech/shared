@@ -1,4 +1,4 @@
-import { toNumber, padStart } from "@/utils/number.ts";
+import { toNumber, padStart, toPositiveNumber } from "@/utils/number.ts";
 import SharedError from "@/models/errors/shared-error.ts";
 import type { TimePeriod } from "@/utils/date-time/types.ts";
 import { FORMAT } from "@/utils/date-time/enums.ts";
@@ -96,23 +96,23 @@ export function toPeriodInterval(fromDate: Date, untilDate = new Date()): TimePe
 
   // 1000 * 60 * 60 * 24 * 365 = 31536000000
   let years = Math.floor(diff(date, untilDate) / 31536000000);
-  if (years > 0) date.setFullYear(date.getFullYear() + years);
+  date.setFullYear(date.getFullYear() + toPositiveNumber(years));
 
   // 1000 * 60 * 60 * 24 * (365 / 12) = 2628000000
   let months = Math.floor(diff(date, untilDate) / 2628000000);
-  if (months > 0) date.setMonth(date.getMonth() + months);
+  date.setMonth(date.getMonth() + toPositiveNumber(months));
 
   // 1000 * 60 * 60 * 24 = 86400000
   let days = Math.floor(diff(date, untilDate) / 86400000);
-  if (days > 0) date.setDate(date.getDate() + days);
+  date.setDate(date.getDate() + toPositiveNumber(days));
 
   // 1000 * 60 * 60 = 3600000
   let hours = Math.floor(diff(date, untilDate) / 3600000);
-  if (hours > 0) date.setHours(date.getHours() + hours);
+  date.setHours(date.getHours() + toPositiveNumber(hours));
 
   // 1000 * 60 = 60000
   let minutes = Math.floor(diff(date, untilDate) / 60000);
-  if (minutes > 0) date.setMinutes(date.getMinutes() + minutes);
+  date.setMinutes(date.getMinutes() + toPositiveNumber(minutes));
 
   let seconds = Math.floor(diff(date, untilDate) / 1000);
 
