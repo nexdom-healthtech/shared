@@ -6,7 +6,7 @@
 export function toKebab(text: string) {
   return text
     .trim()
-    .replace(/[_\s]+/g, "-")
+    .replaceAll(/[_\s]+/g, "-")
     .toLowerCase();
 }
 
@@ -17,7 +17,7 @@ export function toKebab(text: string) {
  */
 export function toCamel(text: string) {
   const kebabText = toKebab(text);
-  return kebabText.replace(/-(.)/g, (_, letter) => letter.toUpperCase());
+  return kebabText.replaceAll(/-(.)/g, (_, letter) => letter.toUpperCase());
 }
 
 /**
@@ -27,7 +27,7 @@ export function toCamel(text: string) {
  */
 export function toTitle(text: string) {
   const sentenceText = toSentence(text);
-  return sentenceText.replace(/\s(.)/g, (_, letter) => ` ${letter.toUpperCase()}`);
+  return sentenceText.replaceAll(/\s(.)/g, (_, letter) => ` ${letter.toUpperCase()}`);
 }
 
 /**

@@ -5,7 +5,7 @@
  */
 export function emitCustomEvent<T>(type: string, detail?: T) {
   const customEvent = new CustomEvent<T>(type, { detail });
-  window.dispatchEvent(customEvent);
+  globalThis.dispatchEvent(customEvent);
 }
 
 /**
@@ -14,11 +14,11 @@ export function emitCustomEvent<T>(type: string, detail?: T) {
  * @return a function that removes the event listener
  */
 export function listenEvent<K extends keyof WindowEventMap>(
-  ...params: Parameters<typeof window.addEventListener<K>>
+  ...params: Parameters<typeof globalThis.addEventListener<K>>
 ): () => void;
-export function listenEvent(...params: Parameters<typeof window.addEventListener>): () => void;
-export function listenEvent(...params: Parameters<typeof window.addEventListener>) {
-  window.addEventListener(...params);
+export function listenEvent(...params: Parameters<typeof globalThis.addEventListener>): () => void;
+export function listenEvent(...params: Parameters<typeof globalThis.addEventListener>) {
+  globalThis.addEventListener(...params);
   return () => removeListener(...params);
 }
 
@@ -27,9 +27,9 @@ export function listenEvent(...params: Parameters<typeof window.addEventListener
  * @param params same from [removeEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener#parameters)
  */
 export function removeListener<K extends keyof WindowEventMap>(
-  ...params: Parameters<typeof window.removeEventListener<K>>
+  ...params: Parameters<typeof globalThis.removeEventListener<K>>
 ): void;
-export function removeListener(...params: Parameters<typeof window.removeEventListener>): void;
-export function removeListener(...params: Parameters<typeof window.removeEventListener>) {
-  window.removeEventListener(...params);
+export function removeListener(...params: Parameters<typeof globalThis.removeEventListener>): void;
+export function removeListener(...params: Parameters<typeof globalThis.removeEventListener>) {
+  globalThis.removeEventListener(...params);
 }

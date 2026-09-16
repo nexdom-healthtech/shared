@@ -34,12 +34,12 @@ export function formatDateTime(
  */
 export function toDate(text: string, format: string): Date {
   let regexString = format
-    .replace(FORMAT.YEAR, "(?<year>\\d{4})")
-    .replace(FORMAT.MONTH, "(?<month>\\d{2})")
-    .replace(FORMAT.DAY, "(?<day>\\d{2})")
-    .replace(FORMAT.HOURS, "(?<hours>\\d{2})")
-    .replace(FORMAT.MINUTES, "(?<minutes>\\d{2})")
-    .replace(FORMAT.SECONDS, "(?<seconds>\\d{2})");
+    .replace(FORMAT.YEAR, String.raw`(?<year>\d{4})`)
+    .replace(FORMAT.MONTH, String.raw`(?<month>\d{2})`)
+    .replace(FORMAT.DAY, String.raw`(?<day>\d{2})`)
+    .replace(FORMAT.HOURS, String.raw`(?<hours>\d{2})`)
+    .replace(FORMAT.MINUTES, String.raw`(?<minutes>\d{2})`)
+    .replace(FORMAT.SECONDS, String.raw`(?<seconds>\d{2})`);
 
   const parsedDate = new RegExp(regexString).exec(text)?.groups;
   if (!parsedDate)
@@ -126,7 +126,7 @@ export function toPeriodInterval(fromDate: Date, untilDate = new Date()): TimePe
  * @returns a string according to the provided format
  */
 export function formatPeriodInterval(period: TimePeriod, format: string) {
-  const interval = Object.assign({}, period);
+  const interval = { ...period };
 
   const hasYears = format.includes(FORMAT.YEAR);
   const hasMonths = format.includes(FORMAT.MONTH);
