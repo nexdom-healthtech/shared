@@ -4,6 +4,19 @@
 [![CD](https://github.com/nexdom-healthtech/shared/actions/workflows/cd.yml/badge.svg)](https://github.com/nexdom-healthtech/shared/actions/workflows/cd.yml)
 [![Dependabot](https://github.com/nexdom-healthtech/shared/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/nexdom-healthtech/shared/actions/workflows/dependabot/dependabot-updates)
 
+[![Quality Gate Status](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=alert_status&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Maintainability Rating](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=software_quality_maintainability_rating&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Reliability Rating](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=software_quality_reliability_rating&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Security Rating](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=software_quality_security_rating&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Lines of Code](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=ncloc&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Coverage](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=coverage&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Duplicated Lines (%)](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=duplicated_lines_density&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+[![Technical Debt](https://sonar-qube-public.services-dev.nexdom.tec.br/api/project_badges/measure?project=Shared&metric=software_quality_maintainability_remediation_effort&token=sqb_c9cf5ffef3f078a5b30458c32628c04a3207140a)](https://sonar-qube-public.services-dev.nexdom.tec.br/dashboard?id=Shared)
+
+[![Docs Website](https://img.shields.io/website?url=https://nexdom-healthtech.github.io/shared/&label=Docs%20Website&logo=github)](https://nexdom-healthtech.github.io/shared)
+
+[![semantic-release: conventionalcommits](https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+
 Some models, services and utils we need on daily bases.
 
 For more examples and information, check the [docs page](https://nexdom-healthtech.github.io/shared/).
