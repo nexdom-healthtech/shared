@@ -3,6 +3,7 @@ import http from "@/services/http.ts";
 import {
   url as pingUrl,
   forbiddenUrl as pingForbiddenUrl,
+  malformedJsonUrl as pingMalformedJsonUrl,
   response as pingResponse,
   authorization as pintAuthorization,
 } from "@mocks/ping/index.ts";
@@ -60,5 +61,15 @@ describe("http", () => {
         }),
       );
     });
+  });
+
+  it("should resolve to an empty object when the response body isn't valid JSON", async () => {
+    const response = await http.get(pingMalformedJsonUrl);
+    expect(response).toEqual({});
+  });
+
+  it("should cover the private constructor", () => {
+    const HttpConstructor = http as unknown as new () => unknown;
+    expect(() => new HttpConstructor()).not.toThrow();
   });
 });

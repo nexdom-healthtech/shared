@@ -2,6 +2,7 @@ import { http, HttpResponse, type PathParams } from "msw";
 
 export const url = `https://fake-url.com/ping`;
 export const forbiddenUrl = `https://fake-url.com/ping/nothing-here`;
+export const malformedJsonUrl = `https://fake-url.com/ping/malformed`;
 export const authorization = "Q3liZXJkeW5lIFQtODAw";
 export const response = { Ok: true };
 
@@ -24,6 +25,13 @@ const invalidHandlers = methods.map((method) =>
   }),
 );
 
-const handlers = [...validHandlers, ...invalidHandlers];
+const malformedJsonHandlers = methods.map((method) =>
+  http[method]<PathParams, object>(
+    malformedJsonUrl,
+    () => new HttpResponse("not-valid-json", { status: 200 }),
+  ),
+);
+
+const handlers = [...validHandlers, ...invalidHandlers, ...malformedJsonHandlers];
 
 export default handlers;
