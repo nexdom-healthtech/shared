@@ -1,12 +1,17 @@
 import { defineConfig } from "vitepress";
+import type { DefaultTheme } from "vitepress";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
-import pkg from "../../package.json" with { type: "json" };
+
+const pkg = require("../../package.json");
 const releaseYear = 2026;
 const currentYear = new Date().getFullYear();
 const currentYearText = currentYear > releaseYear ? `-${currentYear}` : "";
 
 // https://vitepress.dev/reference/site-config
-const config = {
+// @ts-expect-error TS2321: comparing this large inline config literal against defineConfig's
+// generic exceeds TypeScript's type-checker stack depth. Pinning the theme type explicitly
+// short-circuits the inference instead of letting it get inferred from the literal.
+export default defineConfig<DefaultTheme.Config>({
   lang: "pt-BR",
   title: "shared | NEXDOM",
   base: "/shared/",
@@ -28,7 +33,7 @@ const config = {
       importantLabel: "IMPORTANTE",
       cautionLabel: "ATENÇÃO",
     },
-    config(md: any) {
+    config(md) {
       md.use(groupIconMdPlugin);
     },
   },
@@ -148,6 +153,4 @@ const config = {
       copyright: `Direitos reservados © ${releaseYear}${currentYearText} NEXDOM HealthTech`,
     },
   },
-};
-
-export default defineConfig(config as any);
+});
