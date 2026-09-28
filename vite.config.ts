@@ -33,7 +33,7 @@ export default defineConfig({
       utils: "src/utils/index.ts",
     },
     dts: {
-      tsgo: true,
+      generator: "tsgo",
     },
     exports: true,
   },
