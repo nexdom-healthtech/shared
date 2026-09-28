@@ -1,13 +1,12 @@
 import { defineConfig } from "vitepress";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
-
-const pkg = require("../../package.json");
+import pkg from "../../package.json" with { type: "json" };
 const releaseYear = 2026;
 const currentYear = new Date().getFullYear();
 const currentYearText = currentYear > releaseYear ? `-${currentYear}` : "";
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const config = {
   lang: "pt-BR",
   title: "shared | NEXDOM",
   base: "/shared/",
@@ -29,7 +28,7 @@ export default defineConfig({
       importantLabel: "IMPORTANTE",
       cautionLabel: "ATENÇÃO",
     },
-    config(md) {
+    config(md: any) {
       md.use(groupIconMdPlugin);
     },
   },
@@ -149,4 +148,6 @@ export default defineConfig({
       copyright: `Direitos reservados © ${releaseYear}${currentYearText} NEXDOM HealthTech`,
     },
   },
-});
+};
+
+export default defineConfig(config as any);
