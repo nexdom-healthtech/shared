@@ -42,6 +42,9 @@ next: false
     },{
         group: "Utilitários",
         methods: [{
+            text: "Comparação",
+            link: './utils/comparing'
+        },{
             text: "Cookies",
             link: './utils/cookies'
         },{

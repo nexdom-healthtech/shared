@@ -33,6 +33,8 @@ Também temos suporte para:
   - obter e formatar períodos de intervalo de tempo
 - [Validações](../api/utils/validating)
   - validar `strings` vazias, e-mails, telefones e URLs
+- [Comparação](../api/utils/comparing)
+  - comparar valores em profundidade
 - Tratativas para:
   - [Eventos](../api/utils/events)
     - ouvir e emitir eventos customizados
