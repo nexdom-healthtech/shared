@@ -71,6 +71,7 @@ importing from deep paths like `@nexdom/shared/services/enums`; they aren't part
 | `number.ts`      | `toNumber`, `padStart`                                                                                                                                    |
 | `cookie.ts`      | `getCookie`, `setCookie`, `deleteCookie` — async, backed by the browser [Cookie Store API](https://developer.mozilla.org/en-US/docs/Web/API/CookieStore)  |
 | `validations.ts` | `isEmpty`, `isPhone` (pt-BR phone format), `isEmail`, `isUrl`                                                                                             |
+| `comparison.ts`  | `isDeepEqual` (deep comparison of plain objects, arrays and dates, as a form would)                                                                       |
 
 ### Usage examples
 

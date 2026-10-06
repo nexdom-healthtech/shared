@@ -138,6 +138,7 @@ export default defineConfig<DefaultTheme.Config>({
           text: "Utilitários",
           collapsed: false,
           items: [
+            { text: "Comparação", link: "/api/utils/comparing" },
             { text: "Cookies", link: "/api/utils/cookies" },
             { text: "Data e hora", link: "/api/utils/date-time" },
             { text: "Eventos", link: "/api/utils/events" },
