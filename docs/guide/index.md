@@ -21,6 +21,7 @@ Também temos suporte para:
 - [Texto](../api/utils/text):
   - formatação (exemplo: kebab, camel, title e sentence case)
   - reduzir
+  - aplicar e remover máscaras (exemplo: telefone e CPF)
 - [Números](../api/utils/numbers):
   - conversões relacionadas a numéricos
   - formatar números

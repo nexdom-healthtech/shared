@@ -14,6 +14,14 @@ Abaixo temos exemplos interativos com nossos métodos para formatações.
 - [Initials](../../api/utils/text#toinitials): {{ toInitials(text) }}
 - [Shrink Case](../../api/utils/text#shrinktext): {{ shrinkText(text) }}
 
+<label :for="maskValueId">Valor: </label>
+<input :id="maskValueId" v-model="maskValue" placeholder="11987654321" />
+<label :for="patternId">Máscara: </label>
+<input :id="patternId" v-model="pattern" placeholder="(##) #####-####" />
+
+- [mask](../../api/utils/text#mask): {{ mask(maskValue, pattern) }}
+- [unmask](../../api/utils/text#unmask): {{ unmask(maskValue, pattern) }}
+
 ## Números
 
 <label :for="numberTextId">Texto original: </label>
@@ -78,11 +86,17 @@ As formatações de data e hora levam em consideração os seguintes tokens:
     toPeriodInterval,
     formatPeriodInterval,
     toInitials,
+    mask,
+    unmask,
   } from "../../../dist/utils.mjs"
 
   // Text
   const textId = useId();
   const text = ref("Seu texto aqui");
+  const maskValueId = useId();
+  const maskValue = ref("11987654321");
+  const patternId = useId();
+  const pattern = ref("(##) #####-####");
 
   // Number
   const numberTextId = useId();

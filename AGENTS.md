@@ -65,7 +65,7 @@ importing from deep paths like `@nexdom/shared/services/enums`; they aren't part
 
 | File             | Exports                                                                                                                                                   |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `text.ts`        | `toKebab`, `toCamel`, `toTitle`, `toSentence`, `shrinkText`, `toInitials`                                                                                 |
+| `text.ts`        | `toKebab`, `toCamel`, `toTitle`, `toSentence`, `shrinkText`, `toInitials`, `mask`, `unmask`                                                               |
 | `event.ts`       | `emitCustomEvent`, `listenEvent`, `removeListener` (thin wrappers over `window` events)                                                                   |
 | `date-time/`     | `currentDateTime`, `formatDateTime`, `toDate`, `isValidDateTime`, `navigatePeriod`, `toPeriodInterval`, `formatPeriodInterval`, and the `TimePeriod` type |
 | `number.ts`      | `toNumber`, `padStart`, `toPositiveNumber`                                                                                                                |
